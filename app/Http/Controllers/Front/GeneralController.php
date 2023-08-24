@@ -72,7 +72,7 @@ class GeneralController extends Controller
 
     public function projects(): View
     {
-        $projects = Project::paginate(1);
+        $projects = Project::paginate(6);
 
         return \view('Front.projects', compact('projects'));
     }
