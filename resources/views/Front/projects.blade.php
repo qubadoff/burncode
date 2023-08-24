@@ -24,11 +24,7 @@
                     No data !
                 @endforelse
             </div>
-
-            <ul class="pagination-wrap text-center mt-40">
-                {{ $projects->links() }}
-            </ul>
-
+            {{ $projects->links() }}
         </div>
     </section>
 @endsection
