@@ -14,7 +14,7 @@
                                     <img src="{{ url('/') }}/storage/{{ $project->image }}" alt="img"></a>
                             </div>
                             <div class="project-content">
-                                <h4><a href="{{ route("singleProject", ['slug' => $project->slug]) }}">Tech App</a></h4>
+                                <h4><a href="{{ route("singleProject", ['slug' => $project->slug]) }}">{{ $project->category->name }}</a></h4>
                                 <h3><a href="{{ route("singleProject", ['slug' => $project->slug]) }}">{{ $project->name }}</a></h3>
                                 <a href="{{ route("singleProject", ['slug' => $project->slug]) }}" class="read-more"><i class="las la-long-arrow-alt-right"></i></a>
                             </div>
