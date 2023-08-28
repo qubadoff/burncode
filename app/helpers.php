@@ -14,7 +14,7 @@ if (! function_exists("faqInfo"))
 {
     function faqInfo()
     {
-        $faqInfo = \App\Models\Faq::all();
+        $faqInfo = \App\Models\Faq::orderBy('sort', 'asc')->get();
 
         return $faqInfo;
     }

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('project_link')->nullable();
             $table->string('client_info')->nullable();
             $table->string('slug');
+            $table->integer('sort');
             $table->timestamps();
         });
     }

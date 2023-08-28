@@ -19,7 +19,7 @@ class ProjectResource extends Resource
     protected static ?string $model = Project::class;
 
     protected static ?string $navigationGroup = "Projects";
-    protected static ?int $navigationSort = 1;
+    protected static ?int $navigationSort = 2;
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
 
@@ -47,10 +47,12 @@ class ProjectResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('id'),
-                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('sort')->sortable(),
+                Tables\Columns\TextColumn::make('name')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('project_link'),
                 Tables\Columns\ImageColumn::make('image')->circular()
             ])
+            ->reorderable('sort')
             ->filters([
                 //
             ])

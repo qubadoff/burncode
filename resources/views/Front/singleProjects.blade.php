@@ -1,5 +1,10 @@
 @extends('Front.Layouts.app')
 
+@section('meta')
+    <meta name="description" content="{{ $singleProject->name }}">
+    <meta name="author" content="{{ $singleProject->name }}">
+@endsection
+
 @section('pageTitle') {{ $singleProject->name }} @endsection
 
 @section('content')

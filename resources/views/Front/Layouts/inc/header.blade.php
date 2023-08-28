@@ -10,6 +10,7 @@
                         <li><a href="{{ route("index") }}">{{__("Home")}}</a></li>
                         <li><a href="{{ route("services") }}">{{__("Our services")}}</a></li>
                         <li><a href="{{ route("projects") }}">{{__("Our Projects")}}</a></li>
+                        <li><a href="{{ route("news") }}">{{__("Our News")}}</a></li>
                         <li><a href="{{ route("contact") }}">{{__("Contact")}}</a></li>
                     </ul>
                 </nav>

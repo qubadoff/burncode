@@ -19,7 +19,7 @@ class FaqResource extends Resource
 
     protected static ?string $navigationGroup = "Other";
 
-    protected static ?int $navigationSort = 4;
+    protected static ?int $navigationSort = 5;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
@@ -38,9 +38,11 @@ class FaqResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id'),
-                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('id')->sortable(),
+                Tables\Columns\TextColumn::make('sort')->sortable(),
+                Tables\Columns\TextColumn::make('name')->searchable(),
             ])
+            ->reorderable('sort')
             ->filters([
                 //
             ])

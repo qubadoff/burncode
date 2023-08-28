@@ -21,7 +21,7 @@ class ProjectCategoryResource extends Resource
 
     protected static ?string $navigationGroup = "Projects";
 
-    protected static ?int $navigationSort = 2;
+    protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form
     {
@@ -36,10 +36,12 @@ class ProjectCategoryResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id'),
-                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('id')->sortable(),
+                Tables\Columns\TextColumn::make('sort')->sortable(),
+                Tables\Columns\TextColumn::make('name')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('slug'),
             ])
+            ->reorderable('sort')
             ->filters([
                 //
             ])

@@ -19,7 +19,7 @@ class SiteInfoResource extends Resource
 
     protected static ?string $navigationGroup = "Settings";
 
-    protected static ?int $navigationSort = 5;
+    protected static ?int $navigationSort = 6;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
