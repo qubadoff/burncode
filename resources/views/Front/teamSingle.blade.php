@@ -52,10 +52,10 @@
                             </p>
                         </div>
                         <ul class="social-share">
-                            <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="lab la-twitter"></i></a></li>
-                            <li><a href="#"><i class="lab la-youtube"></i></a></li>
-                            <li><a href="#"><i class="lab la-behance"></i></a></li>
+                            <li><a href="{{ $member->facebook_page }}" target="_blank"><i class="lab la-facebook-f"></i></a></li>
+                            <li><a href="{{ $member->twitter_page }}" target="_blank"><i class="lab la-twitter"></i></a></li>
+                            <li><a href="{{ $member->linkedin_page }}" target="_blank"><i class="lab la-linkedin"></i></a></li>
+                            <li><a href="{{ $member->instagram_page }}" target="_blank"><i class="lab la-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>
