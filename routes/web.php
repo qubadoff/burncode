@@ -17,6 +17,9 @@ Route::prefix('{locale}')->where(['locale' => '[a-zA-Z]{2}'])->middleware('setLo
     Route::get('/news/{slug}', [\App\Http\Controllers\Front\GeneralController::class, 'singleNews'])->name('singleNews');
     Route::get('/category/{slug}', [\App\Http\Controllers\Front\GeneralController::class, 'singlecat'])->name('singlecat');
 
+    Route::get('/team', [\App\Http\Controllers\Front\GeneralController::class, 'team'])->name('team');
+    Route::get('/team/{slug}', [\App\Http\Controllers\Front\GeneralController::class, 'teamSingle'])->name('teamSingle');
+
     Route::get('/contact', [\App\Http\Controllers\Front\GeneralController::class, 'contact'])->name('contact');
     Route::post('/contact-send', [\App\Http\Controllers\Front\GeneralController::class, 'contactSend'])->name('contactSend');
     Route::post('/subscribe-send', [\App\Http\Controllers\Front\GeneralController::class, 'subscribeSend'])->name('subscribeSend');

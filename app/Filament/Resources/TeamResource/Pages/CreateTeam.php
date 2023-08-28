@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\FaqResource\Pages;
+namespace App\Filament\Resources\TeamResource\Pages;
 
-use App\Filament\Resources\FaqResource;
+use App\Filament\Resources\TeamResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\CreateRecord;
 
-class CreateFaq extends CreateRecord
+class CreateTeam extends CreateRecord
 {
-    protected static string $resource = FaqResource::class;
+    protected static string $resource = TeamResource::class;
 
     protected function getRedirectUrl(): string
     {

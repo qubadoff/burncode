@@ -9,6 +9,7 @@ use App\Models\NewsCategory;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\Subscribe;
+use App\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -143,5 +144,24 @@ class GeneralController extends Controller
             ->paginate(6);
 
         return \view('Front.singlecat', compact('posts', 'cat', 'categories'));
+    }
+
+    public function team(): View
+    {
+        $team = Team::orderBy('sort', 'asc')->get();
+
+        return \view('Front.team', compact('team'));
+    }
+
+    public function teamSingle($loale, $slug): View
+    {
+        $member = Team::where('slug', $slug)->first();
+
+        if (! $member)
+        {
+            abort(404);
+        }
+
+        return \view('Front.teamSingle', compact('member'));
     }
 }

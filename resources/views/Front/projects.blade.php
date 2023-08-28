@@ -8,6 +8,34 @@
 @section('pageTitle') {{__("Our Projects")}} @endsection
 
 @section('content')
+
+    <section class="page-header bd-bottom">
+        <div class="lines">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="container">
+            <div class="page-header-info text-left">
+                <h4>{{__("Our Projects")}}</h4>
+                <h2>Explore Our  <span class="wow border-animation" data-wow-delay="300ms">Portfolio</span>...</h2>
+                <p>
+                    {{__("Welcome to our portfolio page, where creativity and innovation converge. Explore our curated collection of design excellence and craftsmanship.")}}
+                </p>
+            </div>
+        </div>
+        <div class="animated-dots">
+            <span class="dot lf-left-right"></span>
+            <span class="dot lf-up-down"></span>
+            <span class="dot lf-up-down"></span>
+            <span class="dot lf-rotate-center"></span>
+            <span class="dot lf-left-right"></span>
+            <span class="dot lf-rotate-center"></span>
+        </div>
+    </section>
+
+
     <section class="project-section padding">
         <div class="container">
             <div class="row">
