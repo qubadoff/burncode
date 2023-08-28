@@ -84,7 +84,7 @@
                                     <a href="{{ route("singlecat", ['slug' => $cat->slug]) }}">
                                         {{ $cat->name }}
                                     </a>
-                                    <span>{{ \App\Models\News::where('cat_id', $cat->id)->count() }}</span>
+                                    <span>{{ \App\Models\News::where('cat_id', $cat->id)->where('status', 'published')->count() }}</span>
                                 </li>
                             @empty
                                 No Data !

@@ -42,8 +42,9 @@ class NewsResource extends Resource
                     Forms\Components\Hidden::make('author_id')->default(auth()->user()->id),
                     Forms\Components\Select::make('status')
                     ->options([
-                       'pending',
-                       'published'
+                       'pending' => 'Pending',
+                       'draft' => 'Draft',
+                       'published' => 'Published'
                     ]),
                 ]),
                 Forms\Components\Card::make([

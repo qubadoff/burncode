@@ -1,7 +1,7 @@
 @extends('Front.Layouts.app')
 
 @section('meta')
-    <meta name="description" content="{{ $singleNews->description }}">
+    <meta name="description" content="{!! $singleNews->description !!}">
     <meta name="author" content="{{ $singleNews->users->name }}">
 @endsection
 

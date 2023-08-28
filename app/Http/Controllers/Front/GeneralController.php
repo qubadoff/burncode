@@ -109,7 +109,7 @@ class GeneralController extends Controller
 
     public function news(): View
     {
-        $news = News::paginate(6);
+        $news = News::where('status', 'published')->paginate(6);
         $categories = NewsCategory::orderBy('sort', 'asc')->get();
 
         return \view('Front.news', compact('news', 'categories'));
@@ -138,7 +138,9 @@ class GeneralController extends Controller
 
         $categories = NewsCategory::all();
 
-        $posts = News::where('cat_id', $cat->id)->paginate(6);
+        $posts = News::where('cat_id', $cat->id)
+            ->where('status', 'published')
+            ->paginate(6);
 
         return \view('Front.singlecat', compact('posts', 'cat', 'categories'));
     }
