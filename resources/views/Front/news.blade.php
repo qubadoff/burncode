@@ -71,6 +71,8 @@
                             No Data !
                         @endforelse
                     </div>
+                    <br/>
+                    <br/>
                     {{ $news->links() }}
                 </div>
 
