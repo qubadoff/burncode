@@ -6,9 +6,9 @@ use App\Filament\Resources\ProjectResource\Pages;
 use App\Filament\Resources\ProjectResource\RelationManagers;
 use App\Models\Project;
 use Filament\Forms;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables;
 
 
@@ -20,7 +20,7 @@ class ProjectResource extends Resource
 
     protected static ?string $navigationGroup = "Projects";
     protected static ?int $navigationSort = 2;
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
 
     public static function form(Form $form): Form

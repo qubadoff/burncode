@@ -10,7 +10,7 @@ class EditFaq extends EditRecord
 {
     protected static string $resource = FaqResource::class;
 
-    protected function getActions(): array
+    protected function getHeaderActions(): array
     {
         return [
             Actions\DeleteAction::make(),

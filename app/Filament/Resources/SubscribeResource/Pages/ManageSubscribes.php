@@ -10,7 +10,7 @@ class ManageSubscribes extends ManageRecords
 {
     protected static string $resource = SubscribeResource::class;
 
-    protected function getActions(): array
+    protected function getHeaderActions(): array
     {
         return [
             Actions\CreateAction::make(),

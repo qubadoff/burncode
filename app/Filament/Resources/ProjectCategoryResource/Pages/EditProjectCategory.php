@@ -10,7 +10,7 @@ class EditProjectCategory extends EditRecord
 {
     protected static string $resource = ProjectCategoryResource::class;
 
-    protected function getActions(): array
+    protected function getHeaderActions(): array
     {
         return [
             Actions\DeleteAction::make(),

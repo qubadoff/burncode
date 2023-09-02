@@ -10,7 +10,7 @@ class EditSiteInfo extends EditRecord
 {
     protected static string $resource = SiteInfoResource::class;
 
-    protected function getActions(): array
+    protected function getHeaderActions(): array
     {
         return [
             Actions\DeleteAction::make(),
