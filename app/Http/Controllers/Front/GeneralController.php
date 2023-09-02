@@ -110,7 +110,7 @@ class GeneralController extends Controller
 
     public function news(): View
     {
-        $news = News::where('status', 'published')->paginate(6);
+        $news = News::where('status', 'published')->latest()->paginate(6);
         $categories = NewsCategory::orderBy('sort', 'asc')->get();
 
         return \view('Front.news', compact('news', 'categories'));
