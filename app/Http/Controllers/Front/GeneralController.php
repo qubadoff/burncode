@@ -141,6 +141,7 @@ class GeneralController extends Controller
 
         $posts = News::where('cat_id', $cat->id)
             ->where('status', 'published')
+            ->latest()
             ->paginate(6);
 
         return \view('Front.singlecat', compact('posts', 'cat', 'categories'));
