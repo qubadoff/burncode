@@ -29,6 +29,7 @@
                             <li><i class="las la-envelope-open"></i><a href="mailto:{{ siteInfo()->email }}">{{ siteInfo()->email }}</a>
                             </li>
                             <li><i class="las la-phone-volume"></i><a href="tel:{{ siteInfo()->phone }}">{{ siteInfo()->phone }}</a></li>
+                            <li><i class="lab la-mastodon"></i><a rel="me" href="https://mastodon.social/@burncode">Mastodon</a></li>
                         </ul>
                     </div>
                 </div>

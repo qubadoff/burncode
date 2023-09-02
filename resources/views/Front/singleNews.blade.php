@@ -8,7 +8,7 @@
     <meta property="og:image" content="{{ url('/') }}/storage/{{ $singleNews->image }}" />
 
     <meta name="twitter:title" content="{{ $singleNews->title }}">
-    <meta name="twitter:description" content="{{ $singleNews->description }}">
+    <meta name="twitter:description" content="{!! $singleNews->description !!}">
     <meta name="twitter:image" content="{{ url('/') }}/{{ app()->getLocale() }}/{{ $singleNews->slug }}">
     <meta name="twitter:card" content="{{ url('/') }}/storage/{{ $singleNews->image }}">
 @endsection
