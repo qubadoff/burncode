@@ -13,6 +13,7 @@
                         <li><a href="{{ siteInfo()->youtube_page }}"><i class="lab la-youtube"></i></a></li>
                         <li><a href="{{ siteInfo()->instagram_page }}"><i class="lab la-instagram"></i></a></li>
                         <li><a href="{{ siteInfo()->linkedin_page }}"><i class="lab la-linkedin"></i></a></li>
+                        <li><a rel="me" href="https://mastodon.social/@burncode"><i class="lab la-mastodon"></i></a></li>
                     </ul>
                 </div>
             </div>
