@@ -78,6 +78,8 @@
                             No Data !
                         @endforelse
                     </div>
+                    <br/>
+                    <br/>
                     {{ $posts->links() }}
                 </div>
 
