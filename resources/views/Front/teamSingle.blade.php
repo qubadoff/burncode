@@ -4,12 +4,12 @@
     <meta name="description" content="{!! $member->description !!}">
     <meta name="author" content="{{ $member->name }}">
     <meta property="og:title" content="{{ $member->name }}" />
-    <meta property="og:url" content="{{ url('/') }}/{{ app()->getLocale() }}/{{ $member->slug }}" />
+    <meta property="og:url" content="{{ url('/') }}/{{ app()->getLocale() }}/team/{{ $member->slug }}" />
     <meta property="og:image" content="{{ url('/') }}/storage/{{ $member->image }}" />
 
     <meta name="twitter:title" content="{{ $member->name }}">
     <meta name="twitter:description" content="{!! $member->description !!}">
-    <meta name="twitter:image" content="{{ url('/') }}/{{ app()->getLocale() }}/{{ $member->slug }}">
+    <meta name="twitter:image" content="{{ url('/') }}/{{ app()->getLocale() }}/team/{{ $member->slug }}">
     <meta name="twitter:card" content="{{ url('/') }}/storage/{{ $member->image }}">
 @endsection
 
