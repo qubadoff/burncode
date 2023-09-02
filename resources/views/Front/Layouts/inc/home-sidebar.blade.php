@@ -23,11 +23,12 @@
             <li><span>Email:</span> <a href="mailto:{{ siteInfo()->email }}">{{ siteInfo()->email }}</a></li>
         </ul>
         <ul class="sidebar-social">
-            <li><a href="{{ siteInfo()->facebook_page }}"><i class="lab la-facebook-f"></i></a></li>
-            <li><a href="{{ siteInfo()->twitter_page }}"><i class="lab la-twitter"></i></a></li>
-            <li><a href="{{ siteInfo()->youtube_page }}"><i class="lab la-youtube"></i></a></li>
-            <li><a href="{{ siteInfo()->instagram_page }}"><i class="lab la-instagram"></i></a></li>
-            <li><a href="{{ siteInfo()->linkedin_page }}"><i class="lab la-linkedin"></i></a></li>
+            <li><a href="{{ siteInfo()->facebook_page }}" target="_blank"><i class="lab la-facebook-f"></i></a></li>
+            <li><a href="{{ siteInfo()->twitter_page }}" target="_blank"><i class="lab la-twitter"></i></a></li>
+            <li><a href="{{ siteInfo()->youtube_page }}" target="_blank"><i class="lab la-youtube"></i></a></li>
+            <li><a href="{{ siteInfo()->instagram_page }}" target="_blank"><i class="lab la-instagram"></i></a></li>
+            <li><a href="{{ siteInfo()->linkedin_page }}" target="_blank"><i class="lab la-linkedin"></i></a></li>
+            <li><a rel="me" href="https://mastodon.social/@burncode" target="_blank"><i class="lab la-mastodon"></i></a></li>
         </ul>
     </div>
 </div>
