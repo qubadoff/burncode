@@ -3,6 +3,7 @@
 @section('meta')
     <meta name="description" content="{{__("Our News")}}">
     <meta name="author" content="{{__("Our News")}}">
+    <meta property="og:image" content="{{ url('/') }}/storage/{{ siteInfo()->image }}" />
 @endsection
 
 @section('pageTitle')

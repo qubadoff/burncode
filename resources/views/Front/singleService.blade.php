@@ -1,8 +1,16 @@
 @extends('Front.Layouts.app')
 
 @section('meta')
-    <meta name="description" content="{{ $service->name }}">
+    <meta name="description" content="{!! $service->description !!}">
     <meta name="author" content="{{ $service->name }}">
+    <meta property="og:title" content="{{ $service->name }}" />
+    <meta property="og:url" content="{{ url('/') }}/{{ app()->getLocale() }}/{{ $service->slug }}" />
+    <meta property="og:image" content="{{ url('/') }}/storage/{{ $service->image }}" />
+
+    <meta name="twitter:title" content="{{ $service->name }}">
+    <meta name="twitter:description" content="{{ $service->description }}">
+    <meta name="twitter:image" content="{{ url('/') }}/{{ app()->getLocale() }}/{{ $service->slug }}">
+    <meta name="twitter:card" content="{{ url('/') }}/storage/{{ $service->image }}">
 @endsection
 
 @section('pageTitle') {{ $service->name }} @endsection
