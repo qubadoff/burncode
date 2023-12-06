@@ -54,7 +54,7 @@ class TeamResource extends Resource
                 Tables\Columns\ImageColumn::make("image")->circular(),
                 Tables\Columns\TextColumn::make("created_at")->sortable()
             ])
-            ->reorderable()
+            ->reorderable('sort')
             ->filters([
                 //
             ])
