@@ -27,6 +27,10 @@
         </div>
         <div class="container">
             <div class="page-header-info text-center">
+                <br/>
+                <br/>
+                <br/>
+                <br/>
                 <h2>{{ $singleNews->title }}</h2>
                 <p>
                     {!! $singleNews->description !!}

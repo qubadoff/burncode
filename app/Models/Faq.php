@@ -13,7 +13,8 @@ class Faq extends Model
 
     protected $fillable = [
         'name',
-        'body'
+        'body',
+        'sort'
     ];
 
     protected $guarded = [];

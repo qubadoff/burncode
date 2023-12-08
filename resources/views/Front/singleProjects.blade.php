@@ -23,6 +23,10 @@
                     <div class="project-thumb">
                         <img src="{{ url('/') }}/storage/{{ $singleProject->image }}" alt="img">
                     </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
                     <div class="project-details-content">
                         <h2 class="mt-30">{{ $singleProject->name }}</h2>
                         <p>

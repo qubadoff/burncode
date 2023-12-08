@@ -13,7 +13,6 @@
                         <li><a href="{{ siteInfo()->youtube_page }}" target="_blank"><i class="lab la-youtube"></i></a></li>
                         <li><a href="{{ siteInfo()->instagram_page }}" target="_blank"><i class="lab la-instagram"></i></a></li>
                         <li><a href="{{ siteInfo()->linkedin_page }}" target="_blank"><i class="lab la-linkedin"></i></a></li>
-                        <li><a rel="me" href="https://mastodon.social/@burncode" target="_blank"><i class="lab la-mastodon"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -28,6 +27,7 @@
                         <li><a href="{{ route("team", ['locale' => app()->getLocale()]) }}">{{__("Our Team")}}</a></li>
                         <li><a href="https://forum.burncode.az" target="_blank">{{__("Our Forum")}}</a></li>
                         <li><a href="{{ route("contact", ['locale' => app()->getLocale()]) }}">{{__("Contact")}}</a></li>
+                        <li><a href="{{ route("faq", ['locale' => app()->getLocale()]) }}">{{__("FAQ")}}</a></li>
                     </ul>
                 </div>
             </div>

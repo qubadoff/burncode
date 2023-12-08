@@ -29,6 +29,7 @@ class FaqResource extends Resource
             ->schema([
                 Forms\Components\Card::make([
                     Forms\Components\TextInput::make('name')->required(),
+                    Forms\Components\TextInput::make('sort')->required()->numeric(),
                     Forms\Components\RichEditor::make('body')->required(),
                 ]),
             ]);

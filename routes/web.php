@@ -24,4 +24,6 @@ Route::prefix('{locale}')->where(['locale' => '[a-zA-Z]{2}'])->middleware('setLo
     Route::post('/contact-send', [\App\Http\Controllers\Front\GeneralController::class, 'contactSend'])->name('contactSend');
     Route::post('/subscribe-send', [\App\Http\Controllers\Front\GeneralController::class, 'subscribeSend'])->name('subscribeSend');
 
+    Route::get('/faq', [\App\Http\Controllers\Front\GeneralController::class, 'faq'])->name('faq');
+
 });

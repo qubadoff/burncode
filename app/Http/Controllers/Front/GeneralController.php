@@ -165,4 +165,9 @@ class GeneralController extends Controller
 
         return \view('Front.teamSingle', compact('member'));
     }
+
+    public function faq(): View
+    {
+        return \view('Front.faq');
+    }
 }

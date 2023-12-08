@@ -116,6 +116,4 @@
         </div>
     </section>
 
-    @include('Front.Layouts.inc.faq')
-
 @endsection
