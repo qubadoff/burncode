@@ -20,7 +20,7 @@
         <div class="container">
             <div class="page-header-info text-left">
                 <h4>{{__("Our Projects")}}</h4>
-                <h2>Explore Our  <span class="wow border-animation" data-wow-delay="300ms">Portfolio</span>...</h2>
+                <h2>Explore Our  <span class="wow border-animation" data-wow-delay="300ms">Projects</span>...</h2>
                 <p>
                     {{__("Welcome to our portfolio page, where creativity and innovation converge. Explore our curated collection of design excellence and craftsmanship.")}}
                 </p>

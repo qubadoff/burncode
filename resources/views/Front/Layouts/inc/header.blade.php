@@ -3,16 +3,16 @@
         <div class="navigation-wrapper">
             <div class="navigation-inner">
                 <div class="site-logo">
-                    <a href="{{ route("index") }}"><img src="{{ url('/') }}/storage/{{ siteInfo()->logo }}" alt="{{ siteInfo()->name }}"></a>
+                    <a href="{{ route("index", ['locale' => app()->getLocale()]) }}"><img src="{{ url('/') }}/storage/{{ siteInfo()->logo }}" alt="{{ siteInfo()->name }}"></a>
                 </div>
                 <nav class="navigation-menu">
                     <ul class="main-menu">
-                        <li><a href="{{ route("index") }}">{{__("Home")}}</a></li>
-                        <li><a href="{{ route("services") }}">{{__("Our services")}}</a></li>
-                        <li><a href="{{ route("projects") }}">{{__("Our Projects")}}</a></li>
-                        <li><a href="{{ route("news") }}">{{__("Our News")}}</a></li>
-                        <li><a href="{{ route("team") }}">{{__("Our Team")}}</a></li>
-                        <li><a href="{{ route("contact") }}">{{__("Contact")}}</a></li>
+                        <li><a href="{{ route("index", ['locale' => app()->getLocale()]) }}">{{__("Home")}}</a></li>
+                        <li><a href="{{ route("services", ['locale' => app()->getLocale()]) }}">{{__("Our services")}}</a></li>
+                        <li><a href="{{ route("projects", ['locale' => app()->getLocale()]) }}">{{__("Our Projects")}}</a></li>
+                        <li><a href="{{ route("news", ['locale' => app()->getLocale()]) }}">{{__("Our News")}}</a></li>
+                        <li><a href="{{ route("team", ['locale' => app()->getLocale()]) }}">{{__("Our Team")}}</a></li>
+                        <li><a href="{{ route("contact", ['locale' => app()->getLocale()]) }}">{{__("Contact")}}</a></li>
                     </ul>
                 </nav>
                 <div class="header-right">

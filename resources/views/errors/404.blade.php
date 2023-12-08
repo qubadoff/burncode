@@ -17,7 +17,7 @@
                 <img src="{{ url('/') }}/assets/img/crying-emoji.svg" alt="img">
                 <h2>404 Page Not Found!</h2>
                 <p>The page you are looking for was moved, removed, <br> renamed or might never existed.</p>
-                <a href="{{ route("index") }}" class="default-btn mt-20">{{__("Back To Home")}}</a>
+                <a href="{{ route("index", ['locale' => app()->getLocale()]) }}" class="default-btn mt-20">{{__("Back To Home")}}</a>
             </div>
         </div>
         <div class="animated-dots">

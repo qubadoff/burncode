@@ -3,7 +3,7 @@
         <div class="row footer-area">
             <div class="col-lg-3 col-sm-6 sm-padding">
                 <div class="footer-widget">
-                    <a class="footer-logo" href="{{ route("index") }}"><img src="{{ url('/') }}/storage/{{ siteInfo()->logo }}" alt="logo"></a>
+                    <a class="footer-logo" href="{{ route("index", ['locale' => app()->getLocale()]) }}"><img src="{{ url('/') }}/storage/{{ siteInfo()->logo }}" alt="logo"></a>
                     <p>
                         {{ siteInfo()->description }}
                     </p>
@@ -21,13 +21,13 @@
                 <div class="footer-widget">
                     <h3>{{__("Pages")}}</h3>
                     <ul class="footer-list">
-                        <li><a href="{{ route("index") }}">{{__("Home")}}</a></li>
-                        <li><a href="{{ route("services") }}">{{__("Our services")}}</a></li>
-                        <li><a href="{{ route("projects") }}">{{__("Our Projects")}}</a></li>
-                        <li><a href="{{ route("news") }}">{{__("Our News")}}</a></li>
-                        <li><a href="{{ route("team") }}">{{__("Our Team")}}</a></li>
+                        <li><a href="{{ route("index", ['locale' => app()->getLocale()]) }}">{{__("Home")}}</a></li>
+                        <li><a href="{{ route("services", ['locale' => app()->getLocale()]) }}">{{__("Our services")}}</a></li>
+                        <li><a href="{{ route("projects", ['locale' => app()->getLocale()]) }}">{{__("Our Projects")}}</a></li>
+                        <li><a href="{{ route("news", ['locale' => app()->getLocale()]) }}">{{__("Our News")}}</a></li>
+                        <li><a href="{{ route("team", ['locale' => app()->getLocale()]) }}">{{__("Our Team")}}</a></li>
                         <li><a href="https://forum.burncode.az" target="_blank">{{__("Our Forum")}}</a></li>
-                        <li><a href="{{ route("contact") }}">{{__("Contact")}}</a></li>
+                        <li><a href="{{ route("contact", ['locale' => app()->getLocale()]) }}">{{__("Contact")}}</a></li>
                     </ul>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                             </div>
                         @endif
                     @endif
-                    <form action="{{ route("subscribeSend") }}" method="POST" class="subscribe-form">
+                    <form action="{{ route("subscribeSend", ['locale' => app()->getLocale()]) }}" method="POST" class="subscribe-form">
                         @csrf
                         @method("POST")
                         <div class="mc-fields">

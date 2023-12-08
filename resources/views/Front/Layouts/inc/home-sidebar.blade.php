@@ -13,7 +13,7 @@
     </button>
     <div class="sidebar-content">
         <div class="site-logo">
-            <a href="{{ route("index") }}"><img src="{{ url('/') }}/storage/{{ siteInfo()->logo }}" alt="logo"></a>
+            <a href="{{ route("index", ['locale' => app()->getLocale()]) }}"><img src="{{ url('/') }}/storage/{{ siteInfo()->logo }}" alt="logo"></a>
         </div>
         <p>
             {{ siteInfo()->location }}
