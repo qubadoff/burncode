@@ -37,22 +37,22 @@
     </section>
 
     <section class="project-section padding">
-        <div class="card">
-            <div class="card-body">
-                <ul class="nav justify-content-center">
-                    @forelse(\App\Models\ProjectCategory::all() as $item)
-                        <li class="nav-item">
-                            <a class="nav-link active" href="{{ route("singleProjectCat", [ "slug" => $item->slug ]) }}">
-                                <button type="button" class="btn btn-primary">{{ $item->name }}</button>
-                            </a>
-                        </li>
-                    @empty
-                        No Data
-                    @endforelse
-                </ul>
-            </div>
-        </div>
         <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <ul class="nav justify-content-center">
+                        @forelse(\App\Models\ProjectCategory::all() as $item)
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{{ route("singleProjectCat", [ "slug" => $item->slug ]) }}">
+                                    <button type="button" class="btn btn-primary">{{ $item->name }}</button>
+                                </a>
+                            </li>
+                        @empty
+                            No Data
+                        @endforelse
+                    </ul>
+                </div>
+            </div>
             <div class="row">
                 @forelse($projects as $project)
                     <div class="col-lg-4 col-sm-6 padding-15">
