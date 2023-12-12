@@ -44,7 +44,7 @@
                         @forelse(\App\Models\ProjectCategory::all() as $item)
                             <li class="nav-item">
                                 <a class="nav-link active" href="{{ route("singleProjectCat", [ "slug" => $item->slug ]) }}">
-                                    <button type="button" class="btn btn-primary">{{ $item->name }}</button>
+                                    <button type="button" class="btn btn-warning">{{ $item->name }}</button>
                                 </a>
                             </li>
                         @empty
