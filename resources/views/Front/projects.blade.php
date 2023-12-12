@@ -38,14 +38,18 @@
 
     <section class="project-section padding">
         <div class="container">
-            <div class="btn-group" role="group" aria-label="Basic example">
-                @forelse(\App\Models\ProjectCategory::all() as $item)
-                    <a href="{{ route("singleProjectCat", [ "slug" => $item->slug ]) }}">
-                        <button type="button" class="btn btn-secondary">{{ $item->name }}</button>
-                    </a>
-                @empty
-                    No Data
-                @endforelse
+            <div class="card">
+                <div class="card-body">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        @forelse(\App\Models\ProjectCategory::all() as $item)
+                            <a href="{{ route("singleProjectCat", [ "slug" => $item->slug ]) }}">
+                                <button type="button" class="btn btn-secondary">{{ $item->name }}</button>
+                            </a>
+                        @empty
+                            No Data
+                        @endforelse
+                    </div>
+                </div>
             </div>
             <br/>
             <br/>
