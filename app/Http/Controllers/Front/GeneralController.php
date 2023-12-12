@@ -104,7 +104,7 @@ class GeneralController extends Controller
 
         $categories = ProjectCategory::all();
 
-        $projects = Project::where('cat_id', $cat->id)->orderBy('sort', 'DESC')->latest()->paginate(6);
+        $projects = Project::where('cat_id', $cat->id)->orderBy('sort', 'ASC')->latest()->paginate(6);
 
         return \view("Front.singleProjectCat", compact('cat', 'categories', 'projects'));
     }
