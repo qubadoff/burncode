@@ -7,6 +7,7 @@ use App\Models\ContactMessages;
 use App\Models\News;
 use App\Models\NewsCategory;
 use App\Models\Project;
+use App\Models\ProjectCategory;
 use App\Models\Service;
 use App\Models\Subscribe;
 use App\Models\Team;
@@ -90,6 +91,22 @@ class GeneralController extends Controller
             }
 
             return \view('Front.singleProjects', compact('singleProject'));
+    }
+
+    public function singleProjectCat($locale, $slug): View
+    {
+        $cat = ProjectCategory::where('slug', $slug)->first();
+
+        if (! $cat)
+        {
+            abort(404);
+        }
+
+        $categories = ProjectCategory::all();
+
+        $projects = Project::where('cat_id', $cat->id)->latest()->paginate(6);
+
+        return \view("Front.singleProjectCat", compact('cat', 'categories', 'projects'));
     }
 
     public function subscribeSend(Request $request): string

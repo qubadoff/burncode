@@ -28,7 +28,8 @@ class ProjectCategoryResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')->required(),
-                Forms\Components\TextInput::make('slug')->unique()->required()
+                Forms\Components\TextInput::make('slug')->unique()->required(),
+                Forms\Components\Hidden::make('sort')->default('1')
             ]);
     }
 

@@ -12,6 +12,7 @@ Route::prefix('{locale}')->where(['locale' => '[a-zA-Z]{2}'])->middleware('setLo
 
     Route::get('/projects', [\App\Http\Controllers\Front\GeneralController::class, 'projects'])->name('projects');
     Route::get('/projects/{slug}', [\App\Http\Controllers\Front\GeneralController::class, 'singleProjects'])->name('singleProject');
+    Route::get('/project-category/{slug}', [\App\Http\Controllers\Front\GeneralController::class, 'singleProjectCat'])->name('singleProjectCat');
 
     Route::get('/news', [\App\Http\Controllers\Front\GeneralController::class, 'news'])->name('news');
     Route::get('/news/{slug}', [\App\Http\Controllers\Front\GeneralController::class, 'singleNews'])->name('singleNews');

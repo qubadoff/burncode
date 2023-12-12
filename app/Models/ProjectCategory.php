@@ -13,7 +13,8 @@ class ProjectCategory extends Model
 
     protected $fillable = [
         'name',
-        'slug'
+        'slug',
+        'sort'
     ];
 
     protected $guarded = [];
