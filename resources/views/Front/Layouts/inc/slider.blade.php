@@ -1,12 +1,14 @@
 <section class="hero-section">
     <div class="container">
-        <div class="card">
+        @if(!is_null(offers()))
             @foreach(offers() as $offer)
-                <div class="card-body">
-                    {!! $offer->body !!}
+                <div class="card">
+                    <div class="card-body">
+                        {!! $offer->body !!}
+                    </div>
                 </div>
             @endforeach
-        </div>
+        @endif
         <div class="row hero-wrap">
             <div class="col-lg-7 sm-padding">
                 <div class="hero-content">

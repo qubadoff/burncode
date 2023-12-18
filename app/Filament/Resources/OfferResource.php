@@ -33,12 +33,12 @@ class OfferResource extends Resource
                 TextInput::make("title")->required()->label("Name"),
                 Textarea::make("excerpt")->label("Excerpt"),
                 RichEditor::make("body")->required()->label("Body"),
-                FileUpload::make("image")->required()->label("Image")->image(),
+                FileUpload::make("image")->label("Image")->image(),
                 TextInput::make("slug")->label("Slug")->required(),
                 Select::make("status")->options([
                     'active' => 'Active',
                     'de_active' => 'De active'
-                ])
+                ])->required()
             ]);
     }
 
