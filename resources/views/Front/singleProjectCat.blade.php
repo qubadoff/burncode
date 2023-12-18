@@ -1,12 +1,12 @@
 @extends('Front.Layouts.app')
 
 @section('meta')
-    <meta name="description" content="{{__("Our Projects")}}">
-    <meta name="author" content="{{__("Our Projects")}}">
+    <meta name="description" content="{{ $cat->name }}">
+    <meta name="author" content="{{ $cat->name }}">
     <meta property="og:image" content="{{ url('/') }}/storage/{{ siteInfo()->image }}" />
 @endsection
 
-@section('pageTitle') {{__("Our Projects")}} @endsection
+@section('pageTitle') {{ $cat->name }} @endsection
 
 @section('content')
 
@@ -19,10 +19,10 @@
         </div>
         <div class="container">
             <div class="page-header-info text-left">
-                <h4>{{__("Our Projects")}}</h4>
-                <h2>Explore Our  <span class="wow border-animation" data-wow-delay="300ms">Projects</span>...</h2>
+                <h4>{{ $cat->name }}</h4>
+                <h2>Explore Our  <span class="wow border-animation" data-wow-delay="300ms">{{ $cat->name }}</span> Projects </h2>
                 <p>
-                    {{__("Welcome to our portfolio page, where creativity and innovation converge. Explore our curated collection of design excellence and craftsmanship.")}}
+                    {{__("Welcome to our projects page, where creativity and innovation converge. Explore our curated collection of design excellence and craftsmanship.")}}
                 </p>
             </div>
         </div>
