@@ -41,7 +41,7 @@
             <div class="card">
                 <div class="card-body">
                     <ul class="nav justify-content-center">
-                        @forelse(\App\Models\ProjectCategory::all() as $item)
+                        @forelse(\App\Models\ProjectCategory::orderBy('sort', 'ASC') as $item)
                             <li class="nav-item">
                                 <a class="nav-link active" href="{{ route("singleProjectCat", [ "slug" => $item->slug ]) }}">
                                     <button type="button" class="btn btn-warning">{{ $item->name }}</button>
