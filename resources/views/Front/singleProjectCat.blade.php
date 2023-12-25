@@ -41,6 +41,11 @@
             <div class="card">
                 <div class="card-body">
                     <ul class="nav justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ route("projects", [ "locale" => app()->getLocale() ]) }}">
+                                <button type="button" class="btn btn-warning">All Projects</button>
+                            </a>
+                        </li>
                         @forelse(\App\Models\ProjectCategory::all() as $item)
                             <li class="nav-item">
                                 <a class="nav-link active" href="{{ route("singleProjectCat", [ "slug" => $item->slug ]) }}">
