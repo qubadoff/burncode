@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\OfferResource\Pages;
-use App\Filament\Resources\OfferResource\RelationManagers;
 use App\Models\Offer;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
