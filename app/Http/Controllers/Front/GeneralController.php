@@ -18,7 +18,9 @@ class GeneralController extends Controller
 {
     public function index(): View
     {
-        return \view('Front.index');
+        $services = Service::paginate(4);
+
+        return \view('Front.index', compact('services'));
     }
 
     public function services(): View
