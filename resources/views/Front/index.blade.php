@@ -62,6 +62,7 @@
 
     <section class="promo-section padding">
         <div class="container">
+            <h1 class="text-center">{{__("Our services")}}</h1>
             <div class="row promo-items">
                 @forelse($services as $service)
                     <div class="col-lg-3 col-md-6 padding-15">
@@ -76,9 +77,11 @@
                     No Data !
                 @endforelse
             </div>
-            <a href="{{ route("services", ['locale' => app()->getLocale()]) }}">
-                <button type="button" class="btn btn-primary btn-lg">{{__("All services")}}</button>
-            </a>
+            <div class="text-center">
+                <a href="{{ route("services", ['locale' => app()->getLocale()]) }}">
+                    <button type="button" class="btn btn-primary btn-lg">{{__("View All services")}}</button>
+                </a>
+            </div>
         </div>
     </section>
 
