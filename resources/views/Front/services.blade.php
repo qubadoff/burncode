@@ -46,7 +46,7 @@ Our versatile services cover all aspects of your project or business, from creat
                         <div class="promo-item">
                             <div class="promo-icon"><img src="{{ url('/') }}/storage/{{ $service->service_icon }}" alt="icon"></div>
                             <h3>{{ $service->name }}</h3>
-                            <p>{{ $service->description }}</p>
+                            <p>{{ Illuminate\Support\Str::limit($service->description, 150) }}</p>
                             <a href="{{ route("singleService", ['slug' => $service->slug]) }}" class="read-more"><i class="las la-arrow-right"></i></a>
                         </div>
                     </div>
