@@ -35,7 +35,12 @@ class ProjectResource extends Resource
                         Forms\Components\TextInput::make('slug')->required(),
                         Forms\Components\TextInput::make('project_link')->required(),
                         Forms\Components\TextInput::make('client_info')->required(),
-                        Forms\Components\Select::make('cat_id')->relationship('category', 'name')->required(),
+                        Forms\Components\Select::make('cat_id')
+                            ->relationship('category', 'name')
+                            ->getOptionLabelFromRecordUsing(function ($record){
+                                return $record->translate('name', app()->getLocale());
+                            })
+                            ->required(),
                         Forms\Components\RichEditor::make('body')->required(),
                     ]),
                 Forms\Components\Card::make([

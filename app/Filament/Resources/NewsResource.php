@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\NewsResource\Pages;
 use App\Models\News;
+use Filament\Actions\LocaleSwitcher;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Concerns\Translatable;
@@ -39,6 +40,9 @@ class NewsResource extends Resource
                     Forms\Components\TextInput::make('slug')->required(),
                     Forms\Components\Select::make('cat_id')
                         ->relationship('category', 'name')
+                        ->getOptionLabelFromRecordUsing(function ($record){
+                            return $record->translate('name', app()->getLocale());
+                        })
                         ->required(),
                     Forms\Components\Hidden::make('author_id')->default(auth()->user()->id),
                     Forms\Components\Select::make('status')
@@ -50,8 +54,8 @@ class NewsResource extends Resource
                 ]),
                 Forms\Components\Card::make([
                     Forms\Components\FileUpload::make('image')
-                        ->enableOpen()
-                        ->enableDownload()
+                        ->openable()
+                        ->downloadable()
                         ->image()
                         ->required(),
                 ]),
