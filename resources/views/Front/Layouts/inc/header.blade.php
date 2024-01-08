@@ -13,6 +13,32 @@
                         <li><a href="{{ route("news", ['locale' => app()->getLocale()]) }}">{{__("Our News")}}</a></li>
                         <li><a href="{{ route("team", ['locale' => app()->getLocale()]) }}">{{__("Our Team")}}</a></li>
                         <li><a href="{{ route("contact", ['locale' => app()->getLocale()]) }}">{{__("Contact")}}</a></li>
+
+                        @if(app()->getLocale() == 'en')
+                            <li>
+                                <a href="{{ url('/') }}/az">
+                                    <button type="button" class="btn btn-warning">
+                                        {{__("AZ")}}
+                                    </button>
+                                </a>
+                            </li>
+                        @elseif(app()->getLocale() == 'az')
+                            <li>
+                                <a href="{{ url('/') }}/en">
+                                    <button type="button" class="btn btn-warning">
+                                        {{__("EN")}}
+                                    </button>
+                                </a>
+                            </li>
+                        @else
+                            <li>
+                                <a href="{{ url('/') }}/en">
+                                    <button type="button" class="btn btn-warning">
+                                        {{__("EN")}}
+                                    </button>
+                                </a>
+                            </li>
+                        @endif
                     </ul>
                 </nav>
                 <div class="header-right">
