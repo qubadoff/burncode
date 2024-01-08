@@ -20,7 +20,7 @@
         <div class="container">
             <div class="page-header-info text-left">
                 <h4>{{__("Our Projects")}}</h4>
-                <h2>Explore Our  <span class="wow border-animation" data-wow-delay="300ms">Projects</span>...</h2>
+                <h2>{{__("Explore Our")}}  <span class="wow border-animation" data-wow-delay="300ms">{{__("Projects")}}</span>...</h2>
                 <p>
                     {{__("Welcome to our portfolio page, where creativity and innovation converge. Explore our curated collection of design excellence and craftsmanship.")}}
                 </p>
@@ -43,7 +43,7 @@
                     <ul class="nav justify-content-center">
                         <li class="nav-item">
                             <a class="nav-link active" href="{{ route("projects", [ "locale" => app()->getLocale() ]) }}">
-                                <button type="button" class="btn btn-warning">All Projects</button>
+                                <button type="button" class="btn btn-warning">{{__("All Projects")}}</button>
                             </a>
                         </li>
                         @forelse(\App\Models\ProjectCategory::orderBy('sort', 'ASC')->get() as $item)

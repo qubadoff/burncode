@@ -30,7 +30,7 @@
                             {!! $singleProject->body !!}
                         </p>
                         <ul class="project-social">
-                            <li>{{__("Share This Project")}}:</li>
+                            <li>{{__("Share")}}:</li>
                             <li><a href="#"><i class="lab la-facebook-f"></i></a></li>
                             <li><a href="#"><i class="lab la-twitter"></i></a></li>
                             <li><a href="#"><i class="lab la-linkedin"></i></a></li>

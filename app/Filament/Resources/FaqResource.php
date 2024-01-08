@@ -6,12 +6,16 @@ use App\Filament\Resources\FaqResource\Pages;
 use App\Models\Faq;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Resources\Concerns\Translatable;
 use Filament\Resources\Resource;
 use Filament\Tables\Table;
 use Filament\Tables;
 
 class FaqResource extends Resource
 {
+
+    use Translatable;
+
     protected static ?string $model = Faq::class;
 
     protected static ?string $navigationGroup = "Other";

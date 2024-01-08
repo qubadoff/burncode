@@ -11,12 +11,16 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Resources\Concerns\Translatable;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 
 class OfferResource extends Resource
 {
+
+    use Translatable;
+
     protected static ?string $model = Offer::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';

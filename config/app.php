@@ -86,9 +86,8 @@ return [
     'locale' => 'en',
 
     'available_locales' => [
-        'az',
         'en',
-        'ru',
+        'az',
     ],
 
     /*

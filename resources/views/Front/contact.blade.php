@@ -35,7 +35,7 @@
                 <div class="col-lg-6 sm-padding">
                     <div class="contact-form-wrap">
                         <div class="contact-heading">
-                            <h2>Fill Up The Form</h2>
+                            <h2>{{__("Fill Up The Form")}}</h2>
                         </div>
                         <div class="contact-form">
                             @if(Session::has('success'))

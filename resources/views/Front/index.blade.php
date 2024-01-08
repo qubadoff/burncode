@@ -27,7 +27,11 @@
                 </div>
                 <div class="col-lg-6 sm-padding">
                     <div class="section-heading mb-40 wow fade-in-bottom" data-wow-delay="200ms">
-                        <h2>{{__("Strategies that get you on the Path to")}} <span class="wow border-animation" data-wow-delay="300ms">{{__("Success")}}!</span></h2>
+                        @if(app()->getLocale() == 'en')
+                            <h2>{{__("Strategies that get you on the Path to")}} <span class="wow border-animation" data-wow-delay="300ms">{{__("Success")}}!</span></h2>
+                        @elseif(app()->getLocale() == 'az')
+                            <h2>{{__("Index section 2")}} <span class="wow border-animation" data-wow-delay="300ms">{{__("Index section 2 end text")}}</span></h2>
+                        @endif
                         <p>
                             {{__("Our success in creating business solutions is due in large part spacially to talented and highly committed team.")}}
                         </p>
@@ -62,7 +66,7 @@
 
     <section class="promo-section padding">
         <div class="container">
-            <h1 class="text-center">{{__("Our services")}}</h1>
+            <h1 class="text-center">{{__("Our Services")}}</h1>
             <div class="row promo-items">
                 @forelse($services as $service)
                     <div class="col-lg-3 col-md-6 padding-15">

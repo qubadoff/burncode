@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Spatie\Translatable\HasTranslations;
 
 class News extends Model
 {
     use HasFactory;
+    use HasTranslations;
 
     protected $table = 'news';
 
@@ -28,6 +30,14 @@ class News extends Model
     protected $guarded = [];
 
     protected $casts = [];
+
+    public $translatable = [
+        'title',
+        'description',
+        'meta_description',
+        'meta_keywords',
+        'body',
+    ];
 
     public function category(): BelongsTo
     {

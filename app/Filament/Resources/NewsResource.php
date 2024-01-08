@@ -6,12 +6,16 @@ use App\Filament\Resources\NewsResource\Pages;
 use App\Models\News;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Resources\Concerns\Translatable;
 use Filament\Resources\Resource;
 use Filament\Tables\Table;
 use Filament\Tables;
 
 class NewsResource extends Resource
 {
+
+    use Translatable;
+
     protected static ?string $model = News::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';

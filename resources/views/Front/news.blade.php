@@ -20,7 +20,7 @@
         </div>
         <div class="container">
             <div class="page-header-info text-center">
-                <h2>{{__("Our news")}}</h2>
+                <h2>{{__("Our News")}}</h2>
                 <p>
                     {{__("In a fast-paced world where information is paramount, stay ahead of the curve with our latest breaking news coverage. Our team of dedicated journalists and reporters is committed to delivering accurate, timely, and in-depth news stories that matter to you.")}}
                 </p>
@@ -79,7 +79,7 @@
                 <div class="col-lg-4 sm-padding">
                     <div class="sidebar-widget">
                         <div class="widget-title">
-                            <h3>Categories</h3>
+                            <h3>{{__("Categories")}}</h3>
                         </div>
                         <ul class="category-list">
                             @forelse($categories as $cat)

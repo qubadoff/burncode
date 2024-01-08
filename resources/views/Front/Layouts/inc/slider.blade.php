@@ -41,7 +41,7 @@
                             <div class="atropos-rotate">
                                 <div class="atropos-inner">
                                     <div class="parallax-item">
-                                        <img data-atropos-offset="-3" src="{{ url('/') }}/assets/img/illustration07.png    " alt="img">
+                                        <img data-atropos-offset="-3" src="{{ url('/') }}/assets/img/illustration07.png" alt="img">
                                     </div>
                                     <div data-atropos-offset="3" class="hero-elements">
                                         <div></div>

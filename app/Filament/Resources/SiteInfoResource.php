@@ -6,12 +6,16 @@ use App\Filament\Resources\SiteInfoResource\Pages;
 use App\Models\SiteInfo;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Resources\Concerns\Translatable;
 use Filament\Resources\Resource;
 use Filament\Tables\Table;
 use Filament\Tables;
 
 class SiteInfoResource extends Resource
 {
+
+    use Translatable;
+
     protected static ?string $model = SiteInfo::class;
 
     protected static ?string $navigationGroup = "Settings";

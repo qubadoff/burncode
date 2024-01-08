@@ -86,7 +86,7 @@
                 <div class="col-lg-4 sm-padding">
                     <div class="sidebar-widget">
                         <div class="widget-title">
-                            <h3>Categories</h3>
+                            <h3>{{__("Categories")}}</h3>
                         </div>
                         <ul class="category-list">
                             @forelse($categories as $cat)

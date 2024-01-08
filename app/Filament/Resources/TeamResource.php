@@ -6,12 +6,16 @@ use App\Filament\Resources\TeamResource\Pages;
 use App\Models\Team;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Resources\Concerns\Translatable;
 use Filament\Resources\Resource;
 use Filament\Tables\Table;
 use Filament\Tables;
 
 class TeamResource extends Resource
 {
+
+    use Translatable;
+
     protected static ?string $model = Team::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';

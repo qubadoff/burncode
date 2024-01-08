@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 class Team extends Model
 {
     use HasFactory;
+    use HasTranslations;
 
     protected $table = 'teams';
 
@@ -28,4 +30,10 @@ class Team extends Model
     protected $guarded = [];
 
     protected $casts = [];
+
+    public $translatable = [
+        'name',
+        'description',
+        'body',
+    ];
 }

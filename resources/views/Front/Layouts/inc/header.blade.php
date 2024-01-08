@@ -8,7 +8,7 @@
                 <nav class="navigation-menu">
                     <ul class="main-menu">
                         <li><a href="{{ route("index", ['locale' => app()->getLocale()]) }}">{{__("Home")}}</a></li>
-                        <li><a href="{{ route("services", ['locale' => app()->getLocale()]) }}">{{__("Our services")}}</a></li>
+                        <li><a href="{{ route("services", ['locale' => app()->getLocale()]) }}">{{__("Our Services")}}</a></li>
                         <li><a href="{{ route("projects", ['locale' => app()->getLocale()]) }}">{{__("Our Projects")}}</a></li>
                         <li><a href="{{ route("news", ['locale' => app()->getLocale()]) }}">{{__("Our News")}}</a></li>
                         <li><a href="{{ route("team", ['locale' => app()->getLocale()]) }}">{{__("Our Team")}}</a></li>

@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 class Service extends Model
 {
     use HasFactory;
+    use HasTranslations;
 
     protected $table = 'services';
 
@@ -21,4 +23,12 @@ class Service extends Model
     ];
 
     protected $guarded = [];
+
+    protected $casts = [];
+
+    public $translatable = [
+        'name',
+        'description',
+        'body'
+    ];
 }

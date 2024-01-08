@@ -6,6 +6,7 @@ use App\Filament\Resources\ProjectResource\Pages;
 use App\Models\Project;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Resources\Concerns\Translatable;
 use Filament\Resources\Resource;
 use Filament\Tables\Table;
 use Filament\Tables;
@@ -14,6 +15,8 @@ use Filament\Tables;
 
 class ProjectResource extends Resource
 {
+
+    use Translatable;
 
     protected static ?string $model = Project::class;
 

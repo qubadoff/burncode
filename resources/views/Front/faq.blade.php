@@ -1,8 +1,8 @@
 @extends('Front.Layouts.app')
 
 @section('meta')
-    <meta name="description" content="{{__("Our FAQ")}}">
-    <meta name="author" content="{{__("Our FAQ")}}">
+    <meta name="description" content="{{__("Our FAQ's")}}">
+    <meta name="author" content="{{__("Our FAQ's")}}">
     <meta property="og:image" content="{{ url('/') }}/storage/{{ siteInfo()->image }}" />
 @endsection
 
@@ -21,10 +21,9 @@
         </div>
         <div class="container">
             <div class="page-header-info text-center">
-                <h2>{{__("Our FAQ")}}</h2>
+                <h2>{{__("Our FAQ's")}}</h2>
                 <p>
-                    {{__("
-Welcome to our FAQ page! Find quick answers to common questions about our products and services. Can't find what you need? Contact our support team for assistance.")}}
+                    {{__("Welcome to our FAQ page! Find quick answers to common questions about our products and services. Can't find what you need? Contact our support team for assistance.")}}
                 </p>
             </div>
         </div>
@@ -41,7 +40,7 @@ Welcome to our FAQ page! Find quick answers to common questions about our produc
     <section class="faq-section bg-grey padding">
         <div class="container">
             <div class="section-heading text-center mb-40 wow fade-in-bottom" data-wow-delay="200ms">
-                <h2>{{__("Help and")}}<span class="wow border-animation" data-wow-delay="500ms">{{__("FAQ's")}}</span></h2>
+                <h2>{{__("Our FAQ's")}}</h2>
                 <p>{{__("FAQ, or Frequently Asked Questions, is a curated list of common queries and their concise answers. It serves as a helpful resource for users, customers, or visitors to quickly find information and solutions to their most typical inquiries.")}}</p>
             </div>
             <div class="row">

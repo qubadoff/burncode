@@ -20,10 +20,9 @@
         <div class="container">
             <div class="page-header-info text-left">
                 <h4>{{__("Our Services")}}</h4>
-                <h2>Explore Our  <span class="wow border-animation" data-wow-delay="300ms">Services</span>...</h2>
+                <h2>{{__("Explore Our")}}  <span class="wow border-animation" data-wow-delay="300ms">{{__("Services")}}</span>...</h2>
                 <p>
-                    {{__("
-Our versatile services cover all aspects of your project or business, from creative design to technical development and strategic consulting. We're passionate experts ready to deliver results.")}}
+                    {{__("Our versatile services cover all aspects of your project or business, from creative design to technical development and strategic consulting. We're passionate experts ready to deliver results.")}}
                 </p>
             </div>
         </div>
@@ -36,7 +35,6 @@ Our versatile services cover all aspects of your project or business, from creat
             <span class="dot lf-rotate-center"></span>
         </div>
     </section>
-
 
     <section class="promo-section padding">
         <div class="container">
