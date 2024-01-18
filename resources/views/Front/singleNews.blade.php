@@ -1,14 +1,14 @@
 @extends('Front.Layouts.app')
 
 @section('meta')
-    <meta name="description" content="{!! $singleNews->description !!}">
+    <meta name="description" content="{!! $singleNews->meta_description !!}">
     <meta name="author" content="{{ $singleNews->users->name }}">
     <meta property="og:title" content="{{ $singleNews->title }}" />
     <meta property="og:url" content="{{ url('/') }}/{{ app()->getLocale() }}/news/{{ $singleNews->slug }}" />
     <meta property="og:image" content="{{ url('/') }}/storage/{{ $singleNews->image }}" />
 
     <meta name="twitter:title" content="{{ $singleNews->title }}">
-    <meta name="twitter:description" content="{!! $singleNews->description !!}">
+    <meta name="twitter:description" content="{!! $singleNews->meta_description !!}">
     <meta name="twitter:image" content="{{ url('/') }}/{{ app()->getLocale() }}/news/{{ $singleNews->slug }}">
     <meta name="twitter:card" content="{{ url('/') }}/storage/{{ $singleNews->image }}">
 @endsection
