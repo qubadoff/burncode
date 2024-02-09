@@ -13,7 +13,6 @@ use Filament\Tables;
 
 class ProjectCategoryResource extends Resource
 {
-
     use Translatable;
 
     protected static ?string $model = ProjectCategory::class;

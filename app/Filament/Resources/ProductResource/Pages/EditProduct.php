@@ -17,6 +17,7 @@ class EditProduct extends EditRecord
     {
         return [
             Actions\DeleteAction::make(),
+            Actions\LocaleSwitcher::make()
         ];
     }
 }
