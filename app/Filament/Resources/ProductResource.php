@@ -25,9 +25,9 @@ class ProductResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')->required(),
                 Forms\Components\TextInput::make('slug')->required(),
-                Forms\Components\TextInput::make('description'),
+                Forms\Components\TextInput::make('description')->required(),
                 Forms\Components\RichEditor::make('body'),
-                Forms\Components\FileUpload::make('image')->downloadable()->openable()
+                Forms\Components\FileUpload::make('image')->required()->downloadable()->openable()
             ]);
     }
 
