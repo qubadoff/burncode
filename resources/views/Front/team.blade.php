@@ -23,7 +23,7 @@
         <div class="container">
             <div class="page-header-info text-left">
                 <h4>{{__("Our Team")}}</h4>
-                <h2>Our Team Create Great Things <span class="wow border-animation" data-wow-delay="300ms">Together!</span></h2>
+                <h2>{{__("Our Team Create Great Things")}} <span class="wow border-animation" data-wow-delay="300ms">{{__("Together!")}}</span></h2>
                 <p>
                     {{__("Our versatile team is built of designers, developers and digital marketers who all bring unique experience.")}}
                 </p>

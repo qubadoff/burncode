@@ -14,6 +14,9 @@ Route::prefix('{locale}')->where(['locale' => '[a-zA-Z]{2}'])->middleware('setLo
     Route::get('/projects/{slug}', [\App\Http\Controllers\Front\GeneralController::class, 'singleProjects'])->name('singleProject');
     Route::get('/project-category/{slug}', [\App\Http\Controllers\Front\GeneralController::class, 'singleProjectCat'])->name('singleProjectCat');
 
+    Route::get('/products', [\App\Http\Controllers\Front\GeneralController::class, 'products'])->name('products');
+    Route::get('/products/{slug}', [\App\Http\Controllers\Front\GeneralController::class, 'singleProduct'])->name('singleProduct');
+
     Route::get('/news', [\App\Http\Controllers\Front\GeneralController::class, 'news'])->name('news');
     Route::get('/news/{slug}', [\App\Http\Controllers\Front\GeneralController::class, 'singleNews'])->name('singleNews');
     Route::get('/category/{slug}', [\App\Http\Controllers\Front\GeneralController::class, 'singlecat'])->name('singlecat');
@@ -26,5 +29,4 @@ Route::prefix('{locale}')->where(['locale' => '[a-zA-Z]{2}'])->middleware('setLo
     Route::post('/subscribe-send', [\App\Http\Controllers\Front\GeneralController::class, 'subscribeSend'])->name('subscribeSend');
 
     Route::get('/faq', [\App\Http\Controllers\Front\GeneralController::class, 'faq'])->name('faq');
-
 });

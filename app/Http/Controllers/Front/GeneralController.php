@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\ContactMessages;
 use App\Models\News;
 use App\Models\NewsCategory;
+use App\Models\Product;
 use App\Models\Project;
 use App\Models\ProjectCategory;
 use App\Models\Service;
@@ -81,6 +82,25 @@ class GeneralController extends Controller
         $projects = Project::orderBy('sort', 'asc')->paginate(6);
 
         return \view('Front.projects', compact('projects'));
+    }
+
+    public function products(): View
+    {
+        $products = Product::paginate(10);
+
+        return \view('Front.products', compact('products'));
+    }
+
+    public function singleProduct($locale, $slug): View
+    {
+        $singleProduct = Product::query()->where('slug', $slug)->first();
+
+        if (! $singleProduct)
+        {
+            abort(404);
+        }
+
+        return \view('Front.singleProduct', compact('singleProduct'));
     }
 
     public function singleProjects($locale, $slug): View
