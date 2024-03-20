@@ -40,13 +40,13 @@
     <section class="faq-section bg-grey padding">
         <div class="container">
             <div class="section-heading text-center mb-40 wow fade-in-bottom" data-wow-delay="200ms">
-                <h2>{{__("Our FAQ's")}}</h2>
-                <p>{{__("FAQ, or Frequently Asked Questions, is a curated list of common queries and their concise answers. It serves as a helpful resource for users, customers, or visitors to quickly find information and solutions to their most typical inquiries.")}}</p>
+                <h2>@lang("Our FAQ's")</h2>
+                <p>@lang("FAQ, or Frequently Asked Questions, is a curated list of common queries and their concise answers. It serves as a helpful resource for users, customers, or visitors to quickly find information and solutions to their most typical inquiries.")</p>
             </div>
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
                     <div id="faq-accordion" class="faq-accordion">
-                        @forelse(faqInfo() as $index => $item)
+                        @forelse($faqInfo as $index => $item)
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="faqHeading{{ $index }}">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse{{ $index }}" aria-expanded="false" aria-controls="faqCollapse{{ $index }}">
@@ -62,7 +62,9 @@
                                 </div>
                             </div>
                         @empty
-                            No data!
+                            <div class="accordion-item">
+                                <p>No data!</p>
+                            </div>
                         @endforelse
                     </div>
                 </div>
