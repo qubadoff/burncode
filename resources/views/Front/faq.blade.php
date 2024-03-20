@@ -46,7 +46,7 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
                     <div id="faq-accordion" class="faq-accordion">
-                        @forelse($faqInfo as $index => $item)
+                        @forelse(faqInfo() as $index => $item)
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="faqHeading{{ $index }}">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse{{ $index }}" aria-expanded="false" aria-controls="faqCollapse{{ $index }}">
