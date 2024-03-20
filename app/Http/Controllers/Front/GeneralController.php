@@ -86,7 +86,7 @@ class GeneralController extends Controller
 
     public function products(): View
     {
-        $products = Product::paginate(10);
+        $products = Product::OrderBy('order', 'desc')->paginate(10);
 
         return \view('Front.products', compact('products'));
     }

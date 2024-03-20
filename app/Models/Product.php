@@ -11,13 +11,6 @@ class Product extends Model
     use HasFactory;
     use HasTranslations;
 
-    protected $fillable = [
-        'name',
-        'slug',
-        'description',
-        'body',
-        'image',
-    ];
 
     protected $guarded = [];
 

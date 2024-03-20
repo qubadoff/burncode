@@ -52,7 +52,7 @@ class ProductResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])->reorderable('order');
     }
 
     public static function getRelations(): array
