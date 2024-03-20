@@ -49,11 +49,11 @@
                         @forelse(faqInfo() as $index => $item)
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="faqHeading{{ $index }}">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse{{ $index }}" aria-expanded="false" aria-controls="faqCollapse{{ $index }}">
+                                    <button class="accordion-button{{ $index == 0 ? ' active' : '' }}" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse{{ $index }}" aria-expanded="{{ $index == 0 ? 'true' : 'false' }}" aria-controls="faqCollapse{{ $index }}">
                                         {{ $item->name }}
                                     </button>
                                 </h2>
-                                <div id="faqCollapse{{ $index }}" class="accordion-collapse collapse show" aria-labelledby="faqHeading{{ $index }}" data-bs-parent="#faq-accordion">
+                                <div id="faqCollapse{{ $index }}" class="accordion-collapse{{ $index == 0 ? ' show' : ' collapse' }}" aria-labelledby="faqHeading{{ $index }}" data-bs-parent="#faq-accordion">
                                     <div class="accordion-body">
                                         <p>
                                             {!! $item->body !!}
