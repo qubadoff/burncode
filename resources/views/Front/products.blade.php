@@ -43,7 +43,7 @@
                     <div class="col-lg-4 col-sm-6 padding-15">
                         <div class="project-item">
                             <div class="project-thumb">
-                                <a href="{{ route("singleProject", ['slug' => $project->slug]) }}">
+                                <a href="{{ route("singleProduct", ['slug' => $project->slug]) }}">
                                     <img src="{{ url('/') }}/storage/{{ $project->image }}" alt="img"></a>
                             </div>
                             <div class="project-content">
