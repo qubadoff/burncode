@@ -28,7 +28,8 @@ class SiteInfo extends Model
         'linkedin_page',
         'tiktok_page',
         'youtube_page',
-        'slider_video_url'
+        'slider_video_url',
+        'footer_js_code',
     ];
 
     protected $guarded = [];
