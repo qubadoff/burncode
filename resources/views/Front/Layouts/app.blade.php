@@ -38,6 +38,7 @@
 </div>
 
 
+{{ siteInfo()->footer_js_code }}
 <script src="{{ url('/') }}/assets/js/vendor/jquary-3.6.0.min.js"></script>
 <script src="{{ url('/') }}/assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 <script src="{{ url('/') }}/assets/js/vendor/atropos.min.js"></script>
