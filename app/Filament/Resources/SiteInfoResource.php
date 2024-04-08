@@ -22,6 +22,9 @@ class SiteInfoResource extends Resource
 
     protected static ?int $navigationSort = 6;
 
+    protected static ?string $navigationLabel = "Site Settings";
+    protected static ?string $label = "Setting";
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
@@ -44,6 +47,7 @@ class SiteInfoResource extends Resource
                     Forms\Components\TextInput::make('tiktok_page'),
                     Forms\Components\TextInput::make('youtube_page'),
                     Forms\Components\TextInput::make('slider_video_url'),
+                    Forms\Components\Textarea::make('footer_js_code'),
                 ]),
                 Forms\Components\Card::make([
                     Forms\Components\FileUpload::make('logo')->name('Logo White')->preserveFilenames()->image(),

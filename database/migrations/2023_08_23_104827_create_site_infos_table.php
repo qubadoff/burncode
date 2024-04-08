@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('tiktok_page')->nullable();
             $table->string('youtube_page')->nullable();
             $table->string('slider_video_url')->nullable();
+            $table->text('footer_js_code')->nullable();
             $table->timestamps();
         });
     }
