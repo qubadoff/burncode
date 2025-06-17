@@ -31,6 +31,14 @@
                                     </button>
                                 </a>
                             </li>
+                        @elseif(app()->getLocale() == 'ru')
+                            <li>
+                                <a href="{{ url('/') }}/az">
+                                    <button type="button" class="btn btn-warning">
+                                        {{__("AZ")}}
+                                    </button>
+                                </a>
+                            </li>
                         @else
                             <li>
                                 <a href="{{ url('/') }}/en">
