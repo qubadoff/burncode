@@ -19,7 +19,7 @@
                             <select
                                 class="form-select btn btn-warning"
                                 onchange="location = this.value;"
-                                aria-label="Language select"
+                                aria-label="Lang"
                             >
                                 <option disabled>{{ __('Select Language') }}</option>
                                 <option value="{{ url('/') }}/en" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>EN</option>
