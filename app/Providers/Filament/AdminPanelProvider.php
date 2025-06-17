@@ -26,7 +26,7 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->profile(Pages\Auth\EditProfile::class)
+            ->profile()
             ->default()
             ->id('admin')
             ->path('admin')
@@ -34,7 +34,7 @@ class AdminPanelProvider extends PanelProvider
             ->maxContentWidth(MaxWidth::Full)
             ->login()
             ->colors([
-                'primary' => Color::Yellow,
+                'primary' => Color::Blue,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
