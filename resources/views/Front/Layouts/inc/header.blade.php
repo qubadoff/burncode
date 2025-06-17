@@ -7,47 +7,26 @@
                 </div>
                 <nav class="navigation-menu">
                     <ul class="main-menu">
-                        <li><a href="{{ route("index", ['locale' => app()->getLocale()]) }}">{{__("Home")}}</a></li>
-                        <li><a href="{{ route("services", ['locale' => app()->getLocale()]) }}">{{__("Our Services")}}</a></li>
-                        <li><a href="{{ route("products", ['locale' => app()->getLocale()]) }}">{{__("Our Products")}}</a></li>
-                        <li><a href="{{ route("projects", ['locale' => app()->getLocale()]) }}">{{__("Our Projects")}}</a></li>
-                        <li><a href="{{ route("news", ['locale' => app()->getLocale()]) }}">{{__("Our News")}}</a></li>
-                        <li><a href="{{ route("team", ['locale' => app()->getLocale()]) }}">{{__("Our Team")}}</a></li>
-                        <li><a href="{{ route("contact", ['locale' => app()->getLocale()]) }}">{{__("Contact")}}</a></li>
+                        <li><a href="{{ route('index', ['locale' => app()->getLocale()]) }}">{{ __('Home') }}</a></li>
+                        <li><a href="{{ route('services', ['locale' => app()->getLocale()]) }}">{{ __('Our Services') }}</a></li>
+                        <li><a href="{{ route('products', ['locale' => app()->getLocale()]) }}">{{ __('Our Products') }}</a></li>
+                        <li><a href="{{ route('projects', ['locale' => app()->getLocale()]) }}">{{ __('Our Projects') }}</a></li>
+                        <li><a href="{{ route('news', ['locale' => app()->getLocale()]) }}">{{ __('Our News') }}</a></li>
+                        <li><a href="{{ route('team', ['locale' => app()->getLocale()]) }}">{{ __('Our Team') }}</a></li>
+                        <li><a href="{{ route('contact', ['locale' => app()->getLocale()]) }}">{{ __('Contact') }}</a></li>
 
-                        @if(app()->getLocale() == 'en')
-                            <li>
-                                <a href="{{ url('/') }}/az">
-                                    <button type="button" class="btn btn-warning">
-                                        {{__("AZ")}}
-                                    </button>
-                                </a>
-                            </li>
-                        @elseif(app()->getLocale() == 'az')
-                            <li>
-                                <a href="{{ url('/') }}/en">
-                                    <button type="button" class="btn btn-warning">
-                                        {{__("EN")}}
-                                    </button>
-                                </a>
-                            </li>
-                        @elseif(app()->getLocale() == 'ru')
-                            <li>
-                                <a href="{{ url('/') }}/az">
-                                    <button type="button" class="btn btn-warning">
-                                        {{__("AZ")}}
-                                    </button>
-                                </a>
-                            </li>
-                        @else
-                            <li>
-                                <a href="{{ url('/') }}/en">
-                                    <button type="button" class="btn btn-warning">
-                                        {{__("EN")}}
-                                    </button>
-                                </a>
-                            </li>
-                        @endif
+                        <li>
+                            <select
+                                class="form-select btn btn-warning"
+                                onchange="location = this.value;"
+                                aria-label="Language select"
+                            >
+                                <option disabled>{{ __('Select Language') }}</option>
+                                <option value="{{ url('/') }}/en" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>EN</option>
+                                <option value="{{ url('/') }}/az" {{ app()->getLocale() == 'az' ? 'selected' : '' }}>AZ</option>
+                                <option value="{{ url('/') }}/ru" {{ app()->getLocale() == 'ru' ? 'selected' : '' }}>RU</option>
+                            </select>
+                        </li>
                     </ul>
                 </nav>
                 <div class="header-right">
