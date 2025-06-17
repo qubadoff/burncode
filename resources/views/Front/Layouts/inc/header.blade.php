@@ -21,7 +21,7 @@
                                 onchange="location = this.value;"
                                 aria-label="Lang"
                             >
-                                <option disabled>{{ __('Select Language') }}</option>
+                                <option disabled>{{ __('Lang') }}</option>
                                 <option value="{{ url('/') }}/en" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>EN</option>
                                 <option value="{{ url('/') }}/az" {{ app()->getLocale() == 'az' ? 'selected' : '' }}>AZ</option>
                                 <option value="{{ url('/') }}/ru" {{ app()->getLocale() == 'ru' ? 'selected' : '' }}>RU</option>
