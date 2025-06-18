@@ -17,6 +17,31 @@
 
     <div class="sponsor-section padding"></div>
 
+    <section class="promo-section padding">
+        <div class="container">
+            <h1 class="text-center">{{__("Our Services")}}</h1>
+            <div class="row promo-items">
+                @forelse($services as $service)
+                    <div class="col-lg-3 col-md-6 padding-15">
+                        <div class="promo-item">
+                            <div class="promo-icon"><img src="{{ url('/') }}/storage/{{ $service->service_icon }}" alt="icon"></div>
+                            <h3>{{ $service->name }}</h3>
+                            <p>{{ Illuminate\Support\Str::limit($service->description, 150) }}</p>
+                            <a href="{{ route("singleService", ['slug' => $service->slug]) }}" class="read-more"><i class="las la-arrow-right"></i></a>
+                        </div>
+                    </div>
+                @empty
+                    No Data !
+                @endforelse
+            </div>
+            <div class="text-center">
+                <a href="{{ route("services", ['locale' => app()->getLocale()]) }}">
+                    <button type="button" class="btn btn-primary btn-lg">{{__("View All services")}}</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <section class="feature-section padding-top">
         <div class="container">
             <div class="row align-items-center">
@@ -60,31 +85,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="promo-section padding">
-        <div class="container">
-            <h1 class="text-center">{{__("Our Services")}}</h1>
-            <div class="row promo-items">
-                @forelse($services as $service)
-                    <div class="col-lg-3 col-md-6 padding-15">
-                        <div class="promo-item">
-                            <div class="promo-icon"><img src="{{ url('/') }}/storage/{{ $service->service_icon }}" alt="icon"></div>
-                            <h3>{{ $service->name }}</h3>
-                            <p>{{ Illuminate\Support\Str::limit($service->description, 150) }}</p>
-                            <a href="{{ route("singleService", ['slug' => $service->slug]) }}" class="read-more"><i class="las la-arrow-right"></i></a>
-                        </div>
-                    </div>
-                @empty
-                    No Data !
-                @endforelse
-            </div>
-            <div class="text-center">
-                <a href="{{ route("services", ['locale' => app()->getLocale()]) }}">
-                    <button type="button" class="btn btn-primary btn-lg">{{__("View All services")}}</button>
-                </a>
             </div>
         </div>
     </section>
