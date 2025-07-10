@@ -130,11 +130,6 @@
                                 </div>
                                 <p>{{ $service->description }}</p>
                             </div>
-                            <div class="service-image">
-                                <figure class="image-anime">
-                                    <img src="{{ url('/') }}/storage/{{ $service->image }}" alt="">
-                                </figure>
-                            </div>
                         </div>
                         <!-- Service Item End -->
                     </div>
