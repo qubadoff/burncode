@@ -19,7 +19,7 @@ class GeneralController extends Controller
 {
     public function index(): View
     {
-        $services = Service::query()->paginate(4);
+        $services = Service::query()->paginate(6);
 
         $projects = Project::query()
             ->where('show_index', 1)
