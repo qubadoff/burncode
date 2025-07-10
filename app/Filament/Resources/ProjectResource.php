@@ -42,6 +42,11 @@ class ProjectResource extends Resource
                             })
                             ->required(),
                         Forms\Components\RichEditor::make('body')->required(),
+                        Forms\Components\Radio::make('show_index')
+                            ->options([
+                                '1' => 'Show',
+                                '0' => 'Hide',
+                            ])->required(),
                     ]),
                 Forms\Components\Card::make([
                     Forms\Components\FileUpload::make('image'),

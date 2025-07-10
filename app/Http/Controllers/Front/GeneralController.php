@@ -19,33 +19,44 @@ class GeneralController extends Controller
 {
     public function index(): View
     {
-        $services = Service::paginate(4);
+        $services = Service::query()->paginate(4);
 
-        return \view('Front.index', compact('services'));
+        $projects = Project::query()
+            ->where('show_index', 1)
+            ->orderBy('sort')
+            ->get();
+
+        $news = News::query()
+            ->where('status', 'published')
+            ->latest()
+            ->take(3)
+            ->get();
+
+        return \view('Frontend.index', compact('services', 'projects', 'news'));
     }
 
     public function services(): View
     {
-        $services = Service::orderBy('sort', 'asc')->get();
+        $services = Service::query()->orderBy('sort', 'asc')->get();
 
-        return \view('Front.services', compact('services'));
+        return \view('Frontend.services.services', compact('services'));
     }
 
     public function singleService($locale, $slug): View
     {
-        $service = Service::where('slug', $slug)->first();
+        $service = Service::query()->where('slug', $slug)->first();
 
         if (! $service)
         {
             abort(404);
         }
 
-        return \view('Front.singleService', compact('service'));
+        return \view('Frontend.services.singleService', compact('service'));
     }
 
     public function contact(): View
     {
-        return \view('Front.contact');
+        return \view('Frontend.contact.contact');
     }
 
     public function contactSend(Request $request): string
@@ -79,14 +90,15 @@ class GeneralController extends Controller
 
     public function projects(): View
     {
-        $projects = Project::orderBy('sort', 'asc')->paginate(6);
+        $projectCategories = ProjectCategory::query()->orderBy('sort')->get();
+        $projects = Project::query()->orderBy('sort')->get();
 
-        return \view('Front.projects', compact('projects'));
+        return \view('Frontend.projects.projects', compact('projects', 'projectCategories'));
     }
 
     public function products(): View
     {
-        $products = Product::OrderBy('order_column', 'asc')->paginate(10);
+        $products = Product::query()->OrderBy('order_column', 'asc')->paginate(10);
 
         return \view('Front.products', compact('products'));
     }
@@ -105,14 +117,14 @@ class GeneralController extends Controller
 
     public function singleProjects($locale, $slug): View
     {
-        $singleProject = Project::where('slug', $slug)->first();
+        $singleProject = Project::query()->where('slug', $slug)->first();
 
             if (! $singleProject)
             {
                 abort(404);
             }
 
-            return \view('Front.singleProjects', compact('singleProject'));
+            return \view('Frontend.projects.singleProject', compact('singleProject'));
     }
 
     public function singleProjectCat($locale, $slug): View
@@ -126,7 +138,7 @@ class GeneralController extends Controller
 
         $categories = ProjectCategory::all();
 
-        $projects = Project::where('cat_id', $cat->id)->orderBy('sort', 'ASC')->latest()->paginate(6);
+        $projects = Project::query()->where('cat_id', $cat->id)->orderBy('sort', 'ASC')->latest()->paginate(6);
 
         return \view("Front.singleProjectCat", compact('cat', 'categories', 'projects'));
     }

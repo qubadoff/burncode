@@ -23,6 +23,7 @@ class Project extends Model
         'image',
         'project_link',
         'client_info',
+        'show_index',
     ];
 
     protected $guarded = [];
