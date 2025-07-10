@@ -11,20 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('news', function (Blueprint $table) {
-            $table->id();
-            $table->text("title");
-            $table->mediumText("description")->nullable();
-            $table->mediumText("meta_description")->nullable();
-            $table->mediumText("meta_keywords")->nullable();
-            $table->longText("body")->nullable();
-            $table->text("slug");
-            $table->integer("cat_id");
-            $table->integer("author_id")->nullable();
-            $table->text("status")->default('pending');
-            $table->text("image");
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('news'))
+        {
+            Schema::create('news', function (Blueprint $table) {
+                $table->id();
+                $table->text("title");
+                $table->mediumText("description")->nullable();
+                $table->mediumText("meta_description")->nullable();
+                $table->mediumText("meta_keywords")->nullable();
+                $table->longText("body")->nullable();
+                $table->text("slug");
+                $table->integer("cat_id");
+                $table->integer("author_id")->nullable();
+                $table->text("status")->default('pending');
+                $table->text("image");
+                $table->timestamps();
+            });
+        }
     }
 
     /**
