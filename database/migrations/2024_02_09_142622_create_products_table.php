@@ -11,16 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('products', function (Blueprint $table) {
-            $table->id();
-            $table->integer('order_column')->nullable();
-            $table->text('name');
-            $table->text('slug');
-            $table->text('description')->nullable();
-            $table->longText('body')->nullable();
-            $table->text('image')->nullable();
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('products'))
+        {
+            Schema::create('products', function (Blueprint $table) {
+                $table->id();
+                $table->integer('order_column')->nullable();
+                $table->text('name');
+                $table->text('slug');
+                $table->text('description')->nullable();
+                $table->longText('body')->nullable();
+                $table->text('image')->nullable();
+                $table->timestamps();
+            });
+        }
     }
 
     /**

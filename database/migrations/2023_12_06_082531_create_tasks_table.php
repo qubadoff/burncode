@@ -11,13 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tasks', function (Blueprint $table) {
-            $table->id();
-            $table->text('name');
-            $table->longText('body');
-            $table->enum('status', ['discussion', 'ongoing', 'done'])->default('discussion');
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('tasks'))
+        {
+            Schema::create('tasks', function (Blueprint $table) {
+                $table->id();
+                $table->text('name');
+                $table->longText('body');
+                $table->enum('status', ['discussion', 'ongoing', 'done'])->default('discussion');
+                $table->timestamps();
+            });
+        }
     }
 
     /**
