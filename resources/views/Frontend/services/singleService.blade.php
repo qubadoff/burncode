@@ -1,4 +1,4 @@
-@extends('Frontend.Layouts.app')
+@extends('Frontend.layouts.app')
 
 @section('title', $service->name)
 
