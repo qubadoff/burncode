@@ -26,10 +26,10 @@ class ServiceResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
+            'name' => $this->getLocalizedField('name'),
             'slug' => $this->slug,
-            'description' => $this->description,
-            'body' => $this->body,
+            'description' => $this->getLocalizedField('description'),
+            'body' => $this->getLocalizedField('body'),
             'image' => $this->image ? url('/storage/' . $this->image) : null
         ];
     }
