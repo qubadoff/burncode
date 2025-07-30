@@ -7,7 +7,6 @@ use App\Http\Resources\ProductResource;
 use App\Http\Resources\ServiceResource;
 use App\Models\Product;
 use App\Models\Service;
-use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class GeneralController extends Controller
@@ -15,14 +14,9 @@ class GeneralController extends Controller
     protected string $lang;
     public function __construct(){}
 
-//    public function services(): AnonymousResourceCollection
-//    {
-//        return ServiceResource::collection(Service::query()->orderBy('sort')->get());
-//    }
-
-    public function services(Request $request)
+    public function services(): AnonymousResourceCollection
     {
-        dd($request->header('lang'), $request->headers->all());
+        return ServiceResource::collection(Service::query()->orderBy('sort')->get());
     }
 
     public function products(): AnonymousResourceCollection
