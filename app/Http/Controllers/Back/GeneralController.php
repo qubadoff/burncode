@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\ProductResource;
 use App\Http\Resources\ServiceResource;
+use App\Models\Product;
 use App\Models\Service;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
@@ -13,8 +15,11 @@ class GeneralController extends Controller
 
     public function services(): AnonymousResourceCollection
     {
-        $services = Service::query()->orderBy('sort', 'desc')->get();
+        return ServiceResource::collection(Service::query()->orderBy('sort', 'desc')->get());
+    }
 
-        return ServiceResource::collection($services);
+    public function products(): AnonymousResourceCollection
+    {
+        return ProductResource::collection(Product::query()->orderBy('order_column', 'desc')->get());
     }
 }
