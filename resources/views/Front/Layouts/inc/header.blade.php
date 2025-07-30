@@ -3,7 +3,7 @@
         <div class="navigation-wrapper">
             <div class="navigation-inner">
                 <div class="site-logo">
-                    <a href="{{ route("index", ['locale' => app()->getLocale()]) }}"><img src="{{ url('/') }}/storage/{{ siteInfo()->logo }}" style="width: 180px; height: 50px;" alt="{{ siteInfo()->name }}"></a>
+                    <a href="{{ route("index", ['locale' => app()->getLocale()]) }}"><img src="{{ url('/') }}/storage/{{ siteInfo()->logo }}" style="width: 180px; height: 1px;" alt="{{ siteInfo()->name }}"></a>
                 </div>
                 <nav class="navigation-menu">
                     <ul class="main-menu">
