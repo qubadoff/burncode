@@ -15,11 +15,11 @@ class GeneralController extends Controller
 
     public function services(): AnonymousResourceCollection
     {
-        return ServiceResource::collection(Service::query()->orderBy('sort', 'desc')->get());
+        return ServiceResource::collection(Service::query()->orderBy('sort')->get());
     }
 
     public function products(): AnonymousResourceCollection
     {
-        return ProductResource::collection(Product::query()->orderBy('order_column', 'desc')->get());
+        return ProductResource::collection(Product::query()->orderBy('order_column')->get());
     }
 }
