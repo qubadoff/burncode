@@ -26,10 +26,10 @@ class ServiceResource extends JsonResource
 
         return [
             'id' => $this->id,
-            'name' => $name[$lang] ?? $name['az'] ?? null,
+            'name' => is_array($name) ? ($name[$lang] ?? $name['az'] ?? null) : null,
             'slug' => $this->slug,
-            'description' => $description[$lang] ?? $description['az'] ?? null,
-            'body' => $body[$lang] ?? $body['az'] ?? null,
+            'description' => is_array($description) ? ($description[$lang] ?? $description['az'] ?? null) : null,
+            'body' => is_array($body) ? ($body[$lang] ?? $body['az'] ?? null) : null,
             'image' => $this->image ? url('/storage/' . $this->image) : null,
         ];
     }
