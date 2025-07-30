@@ -11,6 +11,7 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class GeneralController extends Controller
 {
+    protected string $lang;
     public function __construct(){}
 
     public function services(): AnonymousResourceCollection

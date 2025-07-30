@@ -24,7 +24,11 @@ class Service extends Model
 
     protected $guarded = [];
 
-    protected $casts = [];
+    protected $casts = [
+        'name' => 'array',
+        'description' => 'array',
+        'body' => 'array',
+    ];
 
     public $translatable = [
         'name',
