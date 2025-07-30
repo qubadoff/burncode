@@ -17,33 +17,15 @@ class ServiceResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $this->lang = $request->header('lang', 'az');
+        $lang = strtolower($request->header('lang', 'az'));
 
         return [
             'id' => $this->id,
-            'name' => $this->getLocalizedField('name'),
+            'name' => $this->name[$lang] ?? $this->name['az'] ?? null,
             'slug' => $this->slug,
-            'description' => $this->getLocalizedField('description'),
-            'body' => $this->getLocalizedField('body'),
-            'image' => $this->image ? url('/storage/' . $this->image) : null
+            'description' => $this->description[$lang] ?? $this->description['az'] ?? null,
+            'body' => $this->body[$lang] ?? $this->body['az'] ?? null,
+            'image' => $this->image ? url('/storage/' . $this->image) : null,
         ];
-    }
-
-    protected function getLocalizedField(string $field): ?string
-    {
-        $value = $this->{$field};
-
-        if (is_array($value)) {
-            return $value[$this->lang] ?? $value['az'] ?? null;
-        }
-
-        if (is_string($value)) {
-            $decoded = json_decode($value, true);
-            return is_array($decoded)
-                ? ($decoded[$this->lang] ?? $decoded['az'] ?? null)
-                : $value;
-        }
-
-        return $value;
     }
 }
