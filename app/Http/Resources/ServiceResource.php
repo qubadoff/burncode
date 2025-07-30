@@ -8,14 +8,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 class ServiceResource extends JsonResource
 {
 
-    protected string $lang;
-
-    public function __construct($resource)
-    {
-        parent::__construct($resource);
-
-        $this->lang = request()->header('lang', 'az');
-    }
+    protected string $lang = 'az';
 
     /**
      * Transform the resource into an array.
@@ -24,6 +17,8 @@ class ServiceResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        $this->lang = $request->header('lang', 'az');
+
         return [
             'id' => $this->id,
             'name' => $this->getLocalizedField('name'),
