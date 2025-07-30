@@ -16,6 +16,10 @@ class ServiceResource extends JsonResource
     {
         return [
             'id' => $this->id,
+            'name' => $this->name,
+            'description' => $this->description,
+            'body' => $this->body,
+            'image' => url('/storage/') . $this->image,
         ];
     }
 }
