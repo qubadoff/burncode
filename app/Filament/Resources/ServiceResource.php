@@ -48,7 +48,7 @@ class ServiceResource extends Resource
                 Tables\Columns\TextColumn::make('sort')->sortable(),
                 Tables\Columns\TextColumn::make('name')->searchable(),
                 Tables\Columns\TextColumn::make('slug'),
-                Tables\Columns\ImageColumn::make('service_icon')->circular(),
+                Tables\Columns\ImageColumn::make('image'),
             ])
             ->reorderable('sort')
             ->filters([
