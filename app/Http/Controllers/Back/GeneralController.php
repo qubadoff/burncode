@@ -15,21 +15,10 @@ class GeneralController extends Controller
     protected string $lang;
     public function __construct(){}
 
-//    public function services(): AnonymousResourceCollection
-//    {
-//        return ServiceResource::collection(Service::query()->orderBy('sort')->get());
-//    }
-
-    public function services(Request $request)
+    public function services(): AnonymousResourceCollection
     {
-        $service = \App\Models\Service::first();
-        dd([
-            'lang_header' => $request->header('lang'),
-            'name_raw' => $service->name,
-            'name_decoded' => json_decode($service->name, true),
-        ]);
+        return ServiceResource::collection(Service::query()->orderBy('sort')->get());
     }
-
 
     public function products(): AnonymousResourceCollection
     {
