@@ -7,9 +7,6 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class ServiceResource extends JsonResource
 {
-
-    protected string $lang = 'az';
-
     /**
      * Transform the resource into an array.
      *
@@ -17,21 +14,13 @@ class ServiceResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $langRaw = $request->header('lang', 'az');
-        $lang = is_array($langRaw) ? $langRaw[0] : $langRaw;
-
-        $name = json_decode($this->name, true);
-        $description = json_decode($this->description, true);
-        $body = json_decode($this->body, true);
-
         return [
             'id' => $this->id,
-            'name' => is_array($name) ? ($name[$lang] ?? $name['az'] ?? null) : null,
+            'name' => $this->name,
             'slug' => $this->slug,
-            'description' => is_array($description) ? ($description[$lang] ?? $description['az'] ?? null) : null,
-            'body' => is_array($body) ? ($body[$lang] ?? $body['az'] ?? null) : null,
-            'image' => $this->image ? url('/storage/' . $this->image) : null,
+            'description' => $this->description,
+            'body' => $this->body,
+            'image' => url('/') . '/storage/' . $this->image,
         ];
     }
-
 }
