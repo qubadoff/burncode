@@ -17,15 +17,21 @@ class ServiceResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $lang = is_array($request->header('lang')) ? $request->header('lang')[0] : $request->header('lang', 'az');
+        $langRaw = $request->header('lang', 'az');
+        $lang = is_array($langRaw) ? $langRaw[0] : $langRaw;
+
+        $name = json_decode($this->name, true);
+        $description = json_decode($this->description, true);
+        $body = json_decode($this->body, true);
 
         return [
             'id' => $this->id,
-            'name' => is_array($this->name) ? ($this->name[$lang] ?? $this->name['az']) : null,
+            'name' => $name[$lang] ?? $name['az'] ?? null,
             'slug' => $this->slug,
-            'description' => is_array($this->description) ? ($this->description[$lang] ?? $this->description['az']) : null,
-            'body' => is_array($this->body) ? ($this->body[$lang] ?? $this->body['az']) : null,
+            'description' => $description[$lang] ?? $description['az'] ?? null,
+            'body' => $body[$lang] ?? $body['az'] ?? null,
             'image' => $this->image ? url('/storage/' . $this->image) : null,
         ];
     }
+
 }
