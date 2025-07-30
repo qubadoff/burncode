@@ -19,7 +19,7 @@ class ServiceResource extends JsonResource
             'name' => $this->name,
             'description' => $this->description,
             'body' => $this->body,
-            'image' => url('/storage/') . $this->image,
+            'image' => url('/') . 'storage/' . $this->image,
         ];
     }
 }
