@@ -25,7 +25,7 @@ class SendMessageRequest extends FormRequest
         return [
             'name' => 'required|max:20',
             'surname' => 'required|max:30',
-            'email' => 'required|email|max:50|unique:contact_messages,email',
+            'email' => 'required|email|max:50',
             'phone' => 'required|max:30|unique:contact_messages,phone',
             'body' => 'required|max:255'
         ];
