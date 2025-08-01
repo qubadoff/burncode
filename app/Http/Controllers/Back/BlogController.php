@@ -22,7 +22,7 @@ class BlogController extends Controller
         $query = $this->news->query();
 
         if ($request->filled('category_id')) {
-            $query->where('category_id', $request->category_id);
+            $query->where('cat_id', $request->category_id);
         }
 
         $blogs = $query->paginate(10);
