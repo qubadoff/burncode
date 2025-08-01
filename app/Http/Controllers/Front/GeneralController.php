@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Contact\SendMessageRequest;
 use App\Models\ContactMessages;
 use App\Models\News;
 use App\Models\NewsCategory;
@@ -59,31 +60,9 @@ class GeneralController extends Controller
         return \view('Frontend.contact.contact');
     }
 
-    public function contactSend(Request $request): string
+    public function contactSend(SendMessageRequest $request): string
     {
-        $request -> validate([
-            'name' => 'required|max:20',
-            'surname' => 'required|max:30',
-            'email' => 'required|email|max:50|unique:contact_messages,email',
-            'phone' => 'required|max:30|unique:contact_messages,phone',
-            'body' => 'required|max:255'
-        ],[
-            'name.required' => 'Name is required !',
-            'name.max' => 'Name max 20 symbol !',
-            'surname.required' => 'Surname is required !',
-            'surname.max' => 'Surname max 30 symbol !',
-            'email.required' => 'Email is required !',
-            'email.email' => 'Email type incorrect !',
-            'email.max' => 'Email max 50 symbol !',
-            'email.unique' => 'This email is used !',
-            'phone.required' => 'Phone is required !',
-            'phone.max' => 'Phone max 30 symbol !',
-            'phone.unique' => 'This phone number is used !',
-            'body.required' => 'Message is required !',
-            'body.max' => 'Message max 255 symbol !'
-        ]);
-
-        ContactMessages::create($request->all());
+        ContactMessages::query()->create($request->all());
 
         return back()->with('success', 'Your message has been sent ! Thank you !');
     }
