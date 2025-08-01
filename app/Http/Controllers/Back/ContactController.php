@@ -14,7 +14,7 @@ class ContactController extends Controller
 
     public function __construct(SiteInfo $siteInfo)
     {
-        $this->siteInfo = $siteInfo;
+        $this->siteInfo = $siteInfo->first();
     }
 
     public function contactInfo(): JsonResponse
