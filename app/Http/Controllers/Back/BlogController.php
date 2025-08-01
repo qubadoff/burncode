@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Blog\BlogResource;
+use App\Http\Resources\Blog\CategoryResource;
 use App\Models\News;
+use App\Models\NewsCategory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
@@ -28,5 +30,10 @@ class BlogController extends Controller
         $blogs = $query->paginate(10);
 
         return BlogResource::collection($blogs);
+    }
+
+    public function categories(): AnonymousResourceCollection
+    {
+        return CategoryResource::collection(NewsCategory::all());
     }
 }
