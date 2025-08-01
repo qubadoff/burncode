@@ -17,9 +17,15 @@ class BlogController extends Controller
         $this->news = $news;
     }
 
-    public function list(): AnonymousResourceCollection
+    public function list(Request $request): AnonymousResourceCollection
     {
-        $blogs = $this->news->paginate(10);
+        $query = $this->news->query();
+
+        if ($request->filled('category_id')) {
+            $query->where('category_id', $request->category_id);
+        }
+
+        $blogs = $query->paginate(10);
 
         return BlogResource::collection($blogs);
     }
