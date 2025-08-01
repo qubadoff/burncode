@@ -7,5 +7,7 @@ use App\Http\Controllers\Back\GeneralController;
 Route::get('/services', [GeneralController::class, 'services']);
 Route::get('/products', [GeneralController::class, 'products']);
 
-Route::get('/contactInfo', [ContactController::class, 'contactInfo']);
-Route::post('/sendMessage', [ContactController::class, 'sendMessage']);
+Route::prefix('/contact')->group(function () {
+    Route::get('/contactInfo', [ContactController::class, 'contactInfo']);
+    Route::post('/sendMessage', [ContactController::class, 'sendMessage']);
+});
