@@ -10,7 +10,7 @@ Route::get('/products', [GeneralController::class, 'products']);
 
 Route::prefix('/contact')->group(function () {
     Route::get('/contactInfo', [ContactController::class, 'contactInfo']);
-    Route::post('/sendMessage', [ContactController::class, 'sendMessage']);
+    Route::post('/sendMessage', [ContactController::class, 'sendMessage'])->middleware('throttle:2,1');
 });
 
 Route::prefix('blog')->group(function () {
