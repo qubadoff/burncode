@@ -31,6 +31,7 @@ class ContactController extends Controller
             'youtube_page' => $this->siteInfo->youtube_page,
         ]);
     }
+
     public function sendMessage(SendMessageRequest $request): string
     {
 
