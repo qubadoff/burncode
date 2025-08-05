@@ -69,11 +69,9 @@ class GeneralController extends Controller
 
     public function contactSend(SendMessageRequest $request): string
     {
-        $data = $request->validated();
+        ContactMessages::query()->create($request->validated());
 
-        ContactMessages::query()->create($data);
-
-        Mail::to('info@burncode.org')->send(new ContactMessageReceived($data));
+        Mail::to('info@burncode.org')->send(new ContactMessageReceived($request->name, $request->surname, $request->email, $request->phone, $request->body));
 
         return back()->with('success', 'Your message has been received. One of our team members will get in touch with you shortly. Thank you!');
     }

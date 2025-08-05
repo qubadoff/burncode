@@ -3,26 +3,31 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
-use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
 class ContactMessageReceived extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public array $data;
+    public string $name;
+    public string $surname;
+    public string $email;
+    public string $phone;
+    public string $body;
 
-    public function __construct(array $data)
+    public function __construct($name, $surname, $email, $phone, $body)
     {
-        $this->data = $data;
+        $this->name = $name;
+        $this->surname = $surname;
+        $this->email = $email;
+        $this->phone = $phone;
+        $this->body = $body;
     }
 
-    public function build(): ContactMessageReceived
+    public function build(): self
     {
-        return $this->subject('New Contact Message Received')
+        return $this->subject('New Contact Message')
             ->view('emails.contactMessage');
     }
 }
