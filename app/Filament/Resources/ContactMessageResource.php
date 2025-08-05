@@ -37,6 +37,7 @@ class ContactMessageResource extends Resource
                 Tables\Columns\TextColumn::make('surname'),
                 Tables\Columns\TextColumn::make('email'),
                 Tables\Columns\TextColumn::make('phone'),
+                Tables\Columns\TextColumn::make('created_at')->date('Y-m-d H:m:s'),
             ])
             ->filters([
                 //
