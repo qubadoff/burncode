@@ -24,7 +24,7 @@ class ContactMessageResource extends Resource
                 Forms\Components\TextInput::make('surname'),
                 Forms\Components\TextInput::make('email'),
                 Forms\Components\TextInput::make('phone'),
-                Forms\Components\TextInput::make('body'),
+                Forms\Components\Textarea::make('body'),
             ]);
     }
 
