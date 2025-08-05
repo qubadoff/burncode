@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Contact\SendMessageRequest;
+use App\Mail\ContactMessageReceived;
 use App\Models\ContactMessages;
 use App\Models\News;
 use App\Models\NewsCategory;
@@ -14,6 +15,7 @@ use App\Models\Service;
 use App\Models\Subscribe;
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
 
 class GeneralController extends Controller
@@ -67,7 +69,11 @@ class GeneralController extends Controller
 
     public function contactSend(SendMessageRequest $request): string
     {
-        ContactMessages::query()->create($request->all());
+        $data = $request->validated();
+
+        ContactMessages::query()->create($data);
+
+        Mail::to('info@burncode.org')->send(new ContactMessageReceived($data));
 
         return back()->with('success', 'Your message has been received. One of our team members will get in touch with you shortly. Thank you!');
     }
