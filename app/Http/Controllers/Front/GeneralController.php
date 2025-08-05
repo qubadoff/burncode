@@ -36,6 +36,11 @@ class GeneralController extends Controller
         return \view('Frontend.index', compact('services', 'projects', 'news'));
     }
 
+    public function comingSoon(): View
+    {
+        return \view('comingSoon');
+    }
+
     public function services(): View
     {
         $services = Service::query()->orderBy('sort', 'asc')->get();
@@ -64,7 +69,7 @@ class GeneralController extends Controller
     {
         ContactMessages::query()->create($request->all());
 
-        return back()->with('success', 'Your message has been sent ! Thank you !');
+        return back()->with('success', 'Your message has been received. One of our team members will get in touch with you shortly. Thank you!');
     }
 
     public function projects(): View

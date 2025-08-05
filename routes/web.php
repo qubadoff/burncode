@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function (){ return redirect(app()->getLocale()); });
 
 Route::prefix('{locale}')->where(['locale' => '[a-zA-Z]{2}'])->middleware('setLocale')->group(function (){
-    Route::get('/', [GeneralController::class, 'index'])->name('index');
+    Route::get('/', [GeneralController::class, 'comingSoon'])->name('comingSoon');
+//    Route::get('/', [GeneralController::class, 'index'])->name('index');
 
     Route::get('/services', [GeneralController::class, 'services'])->name('services');
     Route::get('/services/{slug}', [GeneralController::class, 'singleService'])->name('singleService');
@@ -27,8 +28,8 @@ Route::prefix('{locale}')->where(['locale' => '[a-zA-Z]{2}'])->middleware('setLo
     Route::get('/team/{slug}', [GeneralController::class, 'teamSingle'])->name('teamSingle');
 
     Route::get('/contact', [GeneralController::class, 'contact'])->name('contact');
-    Route::post('/contact-send', [GeneralController::class, 'contactSend'])->name('contactSend');
-    Route::post('/subscribe-send', [GeneralController::class, 'subscribeSend'])->name('subscribeSend');
+    Route::post('/contact-send', [GeneralController::class, 'contactSend'])->name('contactSend')->middleware('throttle:3,1');
+    Route::post('/subscribe-send', [GeneralController::class, 'subscribeSend'])->name('subscribeSend')->middleware('throttle:3,1');
 
     Route::get('/faq', [GeneralController::class, 'faq'])->name('faq');
 
