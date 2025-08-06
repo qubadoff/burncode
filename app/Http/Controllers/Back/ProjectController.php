@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Blog\BlogResource;
+use App\Http\Resources\Blog\CategoryResource;
 use App\Http\Resources\Project\ProjectResource;
 use App\Models\Project;
+use App\Models\ProjectCategory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
@@ -29,5 +31,10 @@ class ProjectController extends Controller
         $blogs = $query->paginate(10);
 
         return ProjectResource::collection($blogs);
+    }
+
+    public function categories(): AnonymousResourceCollection
+    {
+        return CategoryResource::collection(ProjectCategory::all());
     }
 }

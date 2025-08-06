@@ -22,4 +22,5 @@ Route::prefix('blog')->group(function () {
 
 Route::prefix('projects')->group(function () {
     Route::get('/', [ProjectController::class, 'list']);
+    Route::get('/categories', [ProjectController::class, 'categories']);
 });
