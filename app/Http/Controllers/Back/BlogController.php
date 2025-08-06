@@ -27,7 +27,7 @@ class BlogController extends Controller
             $query->where('cat_id', $request->category_id);
         }
 
-        $blogs = $query->paginate(10);
+        $blogs = $query->paginate(9);
 
         return BlogResource::collection($blogs);
     }
