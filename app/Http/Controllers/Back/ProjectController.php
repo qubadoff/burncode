@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\Blog\BlogResource;
 use App\Http\Resources\Blog\CategoryResource;
 use App\Http\Resources\Project\ProjectResource;
 use App\Models\Project;

@@ -29,6 +29,8 @@ class ContactController extends Controller
             'linkedin_page' => $this->siteInfo->linkedin_page,
             'tiktok_page' => $this->siteInfo->tiktok_page,
             'youtube_page' => $this->siteInfo->youtube_page,
+            'logo' => url('/') . '/storage/' . $this->siteInfo->logo,
+            'logo_footer' => url('/') . '/storage/' . $this->siteInfo->logo2,
         ]);
     }
 
