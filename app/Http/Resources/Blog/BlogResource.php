@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\Blog;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -23,6 +24,7 @@ class BlogResource extends JsonResource
             'meta_keywords' => $this->meta_keywords,
             'body' => $this->body,
             'image' => url('/') . '/storage/' . $this->image,
+            'created_at' => Carbon::parse($this->created_at)->format('Y-m-d'),
             'category' => [
                 'id' => $this->category->id,
                 'name' => $this->category->name,
