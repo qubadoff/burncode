@@ -38,7 +38,7 @@ class BlogController extends Controller
             'id' => 'required|integer|exists:news,id',
         ]);
 
-        return new BlogResource($validated['id']);
+        return new BlogResource(News::query()->findOrFail($validated['id']));
     }
 
     public function categories(): AnonymousResourceCollection
