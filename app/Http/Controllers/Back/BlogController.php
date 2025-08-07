@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Blog\BlogListResource;
 use App\Http\Resources\Blog\BlogResource;
 use App\Http\Resources\Blog\CategoryResource;
 use App\Models\News;
@@ -29,7 +30,7 @@ class BlogController extends Controller
 
         $blogs = $query->paginate(9);
 
-        return BlogResource::collection($blogs);
+        return BlogListResource::collection($blogs);
     }
 
     public function singleNews(Request $request): BlogResource
