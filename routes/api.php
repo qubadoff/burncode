@@ -16,6 +16,7 @@ Route::prefix('/contact')->group(function () {
 
 Route::prefix('blog')->group(function () {
     Route::get('/', [BlogController::class, 'list']);
+    Route::post('/singleNews', [BlogController::class, 'singleNews']);
     Route::get('/categories', [BlogController::class, 'categories']);
 });
 

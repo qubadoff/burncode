@@ -32,6 +32,15 @@ class BlogController extends Controller
         return BlogResource::collection($blogs);
     }
 
+    public function singleNews(Request $request): BlogResource
+    {
+        $validated = $request->validate([
+            'id' => 'required|integer|exists:news,id',
+        ]);
+
+        return new BlogResource($validated['id']);
+    }
+
     public function categories(): AnonymousResourceCollection
     {
         return CategoryResource::collection(NewsCategory::all());
