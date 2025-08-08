@@ -28,6 +28,14 @@ class BlogController extends Controller
             $query->where('cat_id', $request->category_id);
         }
 
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'like', "%{$search}%")
+                    ->orWhere('body', 'like', "%{$search}%");
+            });
+        }
+
         $blogs = $query->paginate(9);
 
         return BlogListResource::collection($blogs);
