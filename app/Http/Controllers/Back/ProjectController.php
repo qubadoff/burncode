@@ -32,6 +32,15 @@ class ProjectController extends Controller
         return ProjectResource::collection($blogs);
     }
 
+    public function singleProject(Request $request): ProjectResource
+    {
+        $validated = $request->validate([
+            'id' => 'required|integer|exists:projects,id',
+        ]);
+
+        return new ProjectResource(Project::query()->findOrFail($validated['id']));
+    }
+
     public function categories(): AnonymousResourceCollection
     {
         return CategoryResource::collection(ProjectCategory::all());
