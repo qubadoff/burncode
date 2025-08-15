@@ -43,13 +43,19 @@ class BlogController extends Controller
     public function singleNews(Request $request): BlogResource
     {
         $validated = $request->validate([
-            'id' => 'required|integer|exists:news,id',
-            'slug' => 'optional|exists:news,slug',
+            'id'   => 'required|integer|exists:news,id',
+            'slug' => 'sometimes|string|exists:news,slug',
         ]);
 
-        //tt
+        if (!empty($validated['id'])) {
+            $news = News::query()->findOrFail($validated['id']);
+        } elseif (!empty($validated['slug'])) {
+            $news = News::query()->where('slug', $validated['slug'])->firstOrFail();
+        } else {
+            abort(400, 'ID veya slug parametresi gereklidir.');
+        }
 
-        return new BlogResource(News::query()->findOrFail($validated['id'] ? $validated['slug']: null));
+        return new BlogResource($news);
     }
 
     public function categories(): AnonymousResourceCollection
