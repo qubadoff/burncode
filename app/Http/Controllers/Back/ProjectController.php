@@ -47,7 +47,7 @@ class ProjectController extends Controller
             abort(400, 'id or slug is required');
         }
 
-        return new ProjectResource(Project::query()->findOrFail($project));
+        return new ProjectResource($project);
     }
 
     public function categories(): AnonymousResourceCollection
