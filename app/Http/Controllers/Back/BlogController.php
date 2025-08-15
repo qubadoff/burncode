@@ -47,6 +47,8 @@ class BlogController extends Controller
             'slug' => 'optional|exists:news,slug',
         ]);
 
+        //tt
+
         return new BlogResource(News::query()->findOrFail($validated['id'] ? $validated['slug']: null));
     }
 
