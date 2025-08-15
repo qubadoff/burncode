@@ -35,10 +35,19 @@ class ProjectController extends Controller
     public function singleProject(Request $request): ProjectResource
     {
         $validated = $request->validate([
-            'id' => 'required|integer|exists:projects,id',
+            'id' => 'sometimes|integer|exists:projects,id',
+            'slug' => 'sometimes|string|exists:projects,slug',
         ]);
 
-        return new ProjectResource(Project::query()->findOrFail($validated['id']));
+        if (!empty($validated['id'])) {
+            $project = Project::query()->findOrFail($validated['id']);
+        } elseif (!empty($validated['slug'])) {
+            $project = Project::query()->where('slug', $validated['slug'])->firstOrFail();
+        } else {
+            abort(400, 'id or slug is required');
+        }
+
+        return new ProjectResource(Project::query()->findOrFail($project));
     }
 
     public function categories(): AnonymousResourceCollection
