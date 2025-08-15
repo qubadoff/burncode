@@ -44,9 +44,10 @@ class BlogController extends Controller
     {
         $validated = $request->validate([
             'id' => 'required|integer|exists:news,id',
+            'slug' => 'optional|exists:news,slug',
         ]);
 
-        return new BlogResource(News::query()->findOrFail($validated['id']));
+        return new BlogResource(News::query()->findOrFail($validated['id'] ? $validated['slug']: null));
     }
 
     public function categories(): AnonymousResourceCollection
