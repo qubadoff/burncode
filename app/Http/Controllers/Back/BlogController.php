@@ -43,7 +43,7 @@ class BlogController extends Controller
     public function singleNews(Request $request): BlogResource
     {
         $validated = $request->validate([
-            'id'   => 'required|integer|exists:news,id',
+            'id'   => 'sometimes|integer|exists:news,id',
             'slug' => 'sometimes|string|exists:news,slug',
         ]);
 
