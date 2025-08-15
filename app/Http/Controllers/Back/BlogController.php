@@ -52,7 +52,7 @@ class BlogController extends Controller
         } elseif (!empty($validated['slug'])) {
             $news = News::query()->where('slug', $validated['slug'])->firstOrFail();
         } else {
-            abort(400, 'ID veya slug parametresi gereklidir.');
+            abort(400, 'id or slug is required !');
         }
 
         return new BlogResource($news);
