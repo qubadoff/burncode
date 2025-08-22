@@ -27,7 +27,7 @@ class ProjectController extends Controller
             $query->where('cat_id', $request->category_id);
         }
 
-        $blogs = $query->paginate(10);
+        $blogs = $query->orderBy('created_at', 'desc')->paginate(10);
 
         return ProjectResource::collection($blogs);
     }

@@ -29,13 +29,13 @@ class BlogController extends Controller
         }
 
         if ($request->filled('search')) {
-            $search = $request->search;
+            $search = $request->input('search');
             $query->where(function ($q) use ($search) {
                 $q->where('title', 'like', "%{$search}%");
             });
         }
 
-        $blogs = $query->paginate(9);
+        $blogs = $query->orderBy('created_at', 'desc')->paginate(9);
 
         return BlogListResource::collection($blogs);
     }
