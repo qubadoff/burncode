@@ -27,5 +27,6 @@ class ProjectCategory extends Model
 
     protected $casts = [
         'name' => 'array',
+        'description' => 'array',
     ];
 }
