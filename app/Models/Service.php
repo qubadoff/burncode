@@ -22,9 +22,16 @@ class Service extends Model
         'slug'
     ];
 
-    protected $guarded = [];
+    protected $guarded = ['id'];
 
-    public $translatable = [
+
+    protected $casts = [
+        'name' => 'array',
+        'description' => 'array',
+        'body' => 'array',
+    ];
+
+    public array $translatable = [
         'name',
         'description',
         'body'
