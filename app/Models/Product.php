@@ -11,9 +11,13 @@ class Product extends Model
 
     protected $guarded = [];
 
-    protected $casts = [];
+    protected $casts = [
+        'name' => 'array',
+        'description' => 'array',
+        'body' => 'array',
+    ];
 
-    public $translatable = [
+    public array $translatable = [
         'name',
         'description',
         'body'
