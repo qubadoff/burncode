@@ -22,11 +22,14 @@ class NewsCategory extends Model
         'image'
     ];
 
-    protected $guarded = [];
+    protected $guarded = ['id'];
 
-    protected $casts = [];
+    protected $casts = [
+        'name' => 'array',
+        'description' => 'array',
+    ];
 
-    public $translatable = [
+    public array $translatable = [
         'name',
         'description',
     ];
