@@ -4,6 +4,8 @@ namespace App\Http\Resources\Blog;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\App;
+
 
 class CategoryResource extends JsonResource
 {
@@ -14,11 +16,13 @@ class CategoryResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        $locale = App::getLocale();
+
         return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'description' => $this->description,
-            'slug' => $this->slug,
+            'id'          => $this->id,
+            'name'        => $this->getTranslation('name', $locale),
+            'description' => $this->getTranslation('description', $locale),
+            'slug'        => $this->slug,
         ];
     }
 }

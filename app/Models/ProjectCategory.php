@@ -19,11 +19,13 @@ class ProjectCategory extends Model
         'sort'
     ];
 
-    protected $guarded = [];
+    protected $guarded = ['id'];
 
-    protected  $casts = [];
-
-    public $translatable = [
+    public array $translatable = [
         'name'
+    ];
+
+    protected $casts = [
+        'name' => 'array',
     ];
 }
