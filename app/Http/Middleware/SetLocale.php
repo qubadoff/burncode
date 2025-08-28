@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\App;
 use Symfony\Component\HttpFoundation\Response;
 
 class SetLocale
@@ -12,13 +12,16 @@ class SetLocale
     /**
      * Handle an incoming request.
      *
-     * @param  \Closure(Request): (Response)  $next
+     * @param Closure(Request): (Response) $next
      */
     public function handle(Request $request, Closure $next)
     {
-        app()->setLocale($request->segment(1));
+        $locale = $request->header('Accept-Language', 'en');
+        if (! in_array($locale, ['az', 'ru', 'en'])) {
+            $locale = 'en';
+        }
 
-        URL::defaults(['locale' => $request->segment(1), 'slug' => $request->segment(3)]);
+        App::setLocale($locale);
 
         return $next($request);
     }

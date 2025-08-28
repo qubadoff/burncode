@@ -28,11 +28,18 @@ class Project extends Model
 
     protected $guarded = [];
 
-    public $translatable = [
+    public array $translatable = [
         'name',
         'description',
         'body'
     ];
+
+    protected $casts = [
+        'name' => 'array',
+        'description' => 'array',
+        'body' => 'array',
+    ];
+
 
     public function category(): BelongsTo
     {
