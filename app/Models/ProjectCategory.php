@@ -22,7 +22,8 @@ class ProjectCategory extends Model
     protected $guarded = ['id'];
 
     public array $translatable = [
-        'name'
+        'name',
+        'description',
     ];
 
     protected $casts = [
