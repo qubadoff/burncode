@@ -27,11 +27,17 @@ class News extends Model
         'image'
     ];
 
-    protected $guarded = [];
+    protected $guarded = ['id'];
 
-    protected $casts = [];
+    protected $casts = [
+        'title' => 'array',
+        'description' => 'array',
+        'meta_description' => 'array',
+        'meta_keywords' => 'array',
+        'body' => 'array',
+    ];
 
-    public $translatable = [
+    public array $translatable = [
         'title',
         'description',
         'meta_description',
